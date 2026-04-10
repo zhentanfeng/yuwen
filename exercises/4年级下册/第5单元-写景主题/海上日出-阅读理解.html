@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>《海上日出》阅读理解专项练习</title>
+  <link rel="stylesheet" href="../../../../css/style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>📝 《海上日出》（巴金）阅读理解专项练习</h1>
+    <p>四年级下册第五单元 | 写景主题 | 附答案解析+答题技巧</p>
+    <button class="print-btn" onclick="window.print()">🖨️ 打印练习题（打印时自动隐藏答案）</button>
+  </div>
+
+  <div class="exercise-container">
+    <div class="text-block">
+      <h3>阅读片段：</h3>
+      <p>
+        果然，过了一会儿，在那个地方出现了太阳的小半边脸，红是真红，却没有亮光。太阳好像负着重荷似的一步一步，慢慢地努力上升，到了最后，终于冲破了云霞，完全跳出了海面，颜色红得非常可爱。一刹那间，这个深红的圆东西，忽然发出了夺目的亮光，射得人眼睛发痛，它旁边的云片也突然有了光彩。<br>
+        有时太阳走进了云堆中，它的光线却从云里射下来，直射到水面上。这时候要分辨出哪里是水，哪里是天，倒也不容易，因为我就只看见一片灿烂的亮光。
+      </p>
+    </div>
+
+    <div class="questions-block">
+      <h3>练习题：</h3>
+      <ol class="question-list">
+        <li>
+          <span class="type-tag">信息提取题</span>
+          太阳出来的过程中，颜色发生了哪些变化？请从原文中找出来。
+        </li>
+        <li>
+          <span class="type-tag">词句理解题</span>
+          联系上下文，说说你对「太阳好像负着重荷似的一步一步，慢慢地努力上升」这句话的理解。
+        </li>
+        <li>
+          <span class="type-tag">修辞手法题</span>
+          文中划线句子用了什么修辞手法？这样写有什么好处？
+        </li>
+        <li>
+          <span class="type-tag">内容概括题</span>
+          这两段话分别写了哪两种情况下的日出景象？
+        </li>
+        <li>
+          <span class="type-tag">开放感悟题</span>
+          你看过日出吗？说说你看日出时的感受？
+        </li>
+      </ol>
+    </div>
+
+    <button class="answer-toggle-btn" onclick="toggleAnswer()">👇 点击查看答案与解析</button>
+    <div id="answer-content" class="answer-block" style="display: none;">
+      <h3>参考答案与答题技巧：</h3>
+      <ol class="answer-list">
+        <li>
+          <p><strong>答案：</strong>一开始是红是真红，没有亮光；后来完全跳出海面时红得非常可爱；最后变成深红，发出夺目的亮光。</p>
+          <p class="skill"><strong>答题技巧：</strong>按时间顺序找原文中描写颜色的词语，不要漏点。</p>
+        </li>
+        <li>
+          <p><strong>答案：</strong>这句话把太阳当作人来写，形象地写出了太阳升起时慢慢上升、很吃力的样子，体现了日出的动态美。</p>
+          <p class="skill"><strong>答题技巧：</strong>先点出拟人手法，再答写出了什么内容，最后说表达效果。</p>
+        </li>
+        <li>
+          <p><strong>答案：</strong>用了拟人的修辞手法，把太阳赋予人的动作，生动形象地写出了太阳完全升起时的力量感，表达了作者对日出的喜爱赞叹之情。</p>
+        </li>
+        <li>
+          <p><strong>答案：</strong>第一段写的是天气晴朗时的日出，第二段写的是有云时的日出。</p>
+        </li>
+        <li>
+          <p><strong>答案示例：</strong>我看过日出，看着太阳一点点从地平线升起来，把天空都染成金色的时候，我觉得特别震撼，感受到大自然真的很神奇。</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <script>
+    function toggleAnswer() {
+      const answerDiv = document.getElementById('answer-content');
+      const btn = document.querySelector('.answer-toggle-btn');
+      if (answerDiv.style.display === 'none') {
+        answerDiv.style.display = 'block';
+        btn.textContent = '👆 点击隐藏答案与解析';
+      } else {
+        answerDiv.style.display = 'none';
+        btn.textContent = '👇 点击查看答案与解析';
+      }
+    }
+  </script>
+</body>
+</html>
