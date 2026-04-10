@@ -7,79 +7,77 @@
   <link rel="stylesheet" href="../../../../css/style.css">
 </head>
 <body>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印练习题（打印时自动隐藏答案）</button>
+  
   <div class="header">
     <h1>📝 《记金华的双龙洞》（叶圣陶）阅读理解专项练习</h1>
     <p>四年级下册第五单元 | 写景主题 | 附答案解析+答题技巧</p>
-    <button class="print-btn" onclick="window.print()">🖨️ 打印练习题（打印时自动隐藏答案）</button>
   </div>
 
-  <div class="exercise-container">
-    <div class="text-block">
-      <h3>阅读片段：</h3>
-      <p>
-        在外洞找泉水的来路，原来从靠左边的石壁下方的孔隙流出。虽说是孔隙，可也容得下一只小船进出。怎样小的小船呢？两个人并排仰卧，刚合适，再没法容第三个人，是这样小的小船。船两头都系着绳子，管理处的工人先进内洞，在里边拉绳子，船就进去，在外洞的工人拉另一头的绳子，船就出来。我怀着好奇的心情独个儿仰卧在小船里，自以为从后脑到肩背，到臀部，到脚跟，没有一处不贴着船底了，才说一声"行了"，船就慢慢移动。眼前昏暗了，可是还能感觉左右和上方的山石似乎都在朝我挤压过来。我又感觉要是把头稍微抬起一点儿，准会撞破额角，擦伤鼻子。大约行了两三丈的水程吧，就登陆了。这就到了内洞。
-      </p>
+  <div class="question-card">
+    <div class="question-title">阅读片段，回答以下问题</div>
+    <div class="passage">
+      在外洞找泉水的来路，原来从靠左边的石壁下方的孔隙流出。虽说是孔隙，可也容得下一只小船进出。怎样小的小船呢？两个人并排仰卧，刚合适，再没法容第三个人，是这样小的小船。船两头都系着绳子，管理处的工人先进内洞，在里边拉绳子，船就进去，在外洞的工人拉另一头的绳子，船就出来。我怀着好奇的心情独个儿仰卧在小船里，自以为从后脑到肩背，到臀部，到脚跟，没有一处不贴着船底了，才说一声"行了"，船就慢慢移动。眼前昏暗了，可是还能感觉左右和上方的山石似乎都在朝我挤压过来。我又感觉要是把头稍微抬起一点儿，准会撞破额角，擦伤鼻子。大约行了两三丈的水程吧，就登陆了。这就到了内洞。
     </div>
 
-    <div class="questions-block">
-      <h3>练习题：</h3>
-      <ol class="question-list">
-        <li>
-          <span class="type-tag">信息提取题</span>
-          文中的孔隙有多小？请用原文中的话回答。
-        </li>
-        <li>
-          <span class="type-tag">词句理解题</span>
-          "我怀着好奇的心情独个儿仰卧在小船里，自以为从后脑到肩背，到臀部，到脚跟，没有一处不贴着船底了"，从这句话你能感受到什么？
-        </li>
-        <li>
-          <span class="type-tag">内容理解题</span>
-          作者通过孔隙的时候有什么感受？从哪些句子可以看出来？
-        </li>
-        <li>
-          <span class="type-tag">描写手法题</span>
-          这段话主要是从哪个角度来写孔隙的特点的？（A 视觉描写 B 心理感受 C 动作描写）
-        </li>
-        <li>
-          <span class="type-tag">拓展题</span>
-          如果你坐在这样的小船里过孔隙，你会有什么感受？
-        </li>
-      </ol>
+    <div class="question-item">
+      <h4><span class="question-type">信息提取题 4分</span>1. 文中的孔隙有多小？请用原文中的话回答。</h4>
+      <div style="height: 80px; border-bottom: 1px solid #ccc; margin: 10px 0;"></div>
+      <button class="answer-toggle" onclick="toggleAnswer('ans1')">查看答案解析</button>
+      <div id="ans1" class="answer-content">
+        <strong>标准答案：</strong>两个人并排仰卧，刚合适，再没法容第三个人，是这样小的小船。<br>
+        <strong>评分标准：</strong>完全引用原文得4分，意思对得2分。
+      </div>
     </div>
 
-    <button class="answer-toggle-btn" onclick="toggleAnswer()">👇 点击查看答案与解析</button>
-    <div id="answer-content" class="answer-block" style="display: none;">
-      <h3>参考答案与答题技巧：</h3>
-      <ol class="answer-list">
-        <li>
-          <p><strong>答案：</strong>两个人并排仰卧，刚合适，再没法容第三个人，是这样小的小船。</p>
-        </li>
-        <li>
-          <p><strong>答案：</strong>我能感受到孔隙非常狭小，必须整个人完全贴着船底才能进去。</p>
-        </li>
-        <li>
-          <p><strong>答案：</strong>作者感觉非常紧张、害怕，从"眼前昏暗了，可是还能感觉左右和上方的山石似乎都在朝我挤压过来。我又感觉要是把头稍微抬起一点儿，准会撞破额角，擦伤鼻子"可以看出来。</p>
-        </li>
-        <li>
-          <p><strong>答案：</strong>B 心理感受，通过作者的亲身感受来体现孔隙的窄小，比直接描写更有说服力。</p>
-        </li>
-        <li>
-          <p><strong>答案示例：</strong>我肯定会特别紧张，不敢抬头，大气都不敢喘，就怕撞到山石，等过去了才会松一口气。</p>
-        </li>
-      </ol>
+    <div class="question-item">
+      <h4><span class="question-type">词句理解题 5分</span>2. "我怀着好奇的心情独个儿仰卧在小船里，自以为从后脑到肩背，到臀部，到脚跟，没有一处不贴着船底了"，从这句话你能感受到什么？</h4>
+      <div style="height: 120px; border-bottom: 1px solid #ccc; margin: 10px 0;"></div>
+      <button class="answer-toggle" onclick="toggleAnswer('ans2')">查看答案解析</button>
+      <div id="ans2" class="answer-content">
+        <strong>标准答案：</strong>我能感受到孔隙非常狭小，必须整个人完全贴着船底才能进去，也能感受到作者当时好奇又紧张的心情。<br>
+        <strong>评分标准：</strong>答出孔隙狭小得3分，答出作者心情得2分。
+      </div>
+    </div>
+
+    <div class="question-item">
+      <h4><span class="question-type">内容理解题 5分</span>3. 作者通过孔隙的时候有什么感受？从哪些句子可以看出来？</h4>
+      <div style="height: 120px; border-bottom: 1px solid #ccc; margin: 10px 0;"></div>
+      <button class="answer-toggle" onclick="toggleAnswer('ans3')">查看答案解析</button>
+      <div id="ans3" class="answer-content">
+        <strong>标准答案：</strong>作者感觉非常紧张、害怕，从"眼前昏暗了，可是还能感觉左右和上方的山石似乎都在朝我挤压过来。我又感觉要是把头稍微抬起一点儿，准会撞破额角，擦伤鼻子"可以看出来。<br>
+        <strong>评分标准：</strong>答出感受得2分，找到对应句子得3分。
+      </div>
+    </div>
+
+    <div class="question-item">
+      <h4><span class="question-type">描写手法题 4分</span>4. 这段话主要是从哪个角度来写孔隙的特点的？（A 视觉描写 B 心理感受 C 动作描写）</h4>
+      <div style="height: 60px; border-bottom: 1px solid #ccc; margin: 10px 0;"></div>
+      <button class="answer-toggle" onclick="toggleAnswer('ans4')">查看答案解析</button>
+      <div id="ans4" class="answer-content">
+        <strong>标准答案：</strong>B 心理感受，通过作者的亲身感受来体现孔隙的窄小，比直接描写更有说服力。<br>
+        <strong>评分标准：</strong>选对答案得2分，说明理由得2分。
+      </div>
+    </div>
+
+    <div class="question-item">
+      <h4><span class="question-type">拓展题 6分</span>5. 如果你坐在这样的小船里过孔隙，你会有什么感受？</h4>
+      <div style="height: 150px; border-bottom: 1px solid #ccc; margin: 10px 0;"></div>
+      <button class="answer-toggle" onclick="toggleAnswer('ans5')">查看答案解析</button>
+      <div id="ans5" class="answer-content">
+        <strong>参考答案：</strong>我肯定会特别紧张，不敢抬头，大气都不敢喘，就怕撞到山石，等过去了才会松一口气，觉得既刺激又好玩。<br>
+        <strong>评分标准：</strong>结合真实感受回答，逻辑通顺即可得分。
+      </div>
     </div>
   </div>
 
   <script>
-    function toggleAnswer() {
-      const answerDiv = document.getElementById('answer-content');
-      const btn = document.querySelector('.answer-toggle-btn');
-      if (answerDiv.style.display === 'none') {
+    function toggleAnswer(id) {
+      const answerDiv = document.getElementById(id);
+      if (answerDiv.style.display === 'none' || answerDiv.style.display === '') {
         answerDiv.style.display = 'block';
-        btn.textContent = '👆 点击隐藏答案与解析';
       } else {
         answerDiv.style.display = 'none';
-        btn.textContent = '👇 点击查看答案与解析';
       }
     }
   </script>
