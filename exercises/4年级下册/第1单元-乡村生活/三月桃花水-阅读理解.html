@@ -10,11 +10,15 @@
       .answer-content, .answer-toggle {
         display: none !important;
       }
+      body.print-only-answer .answer-content {
+        display: block !important;
+      }
     }
   </style>
 </head>
 <body>
-  <button class="print-btn" onclick="window.print()">🖨️ 打印练习题（打印时自动隐藏答案）</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印练习题（不含答案）</button>
+  <button class="print-btn" style="top: 70px;" onclick="printOnlyAnswer()">🖨️ 只打印答案解析</button>
 
   <div class="header">
     <h1>📝 《三月桃花水》（刘湛秋）阅读理解专项练习</h1>
@@ -81,6 +85,12 @@
   </div>
 
   <script>
+    function printOnlyAnswer() {
+      document.body.classList.add('print-only-answer');
+      window.print();
+      document.body.classList.remove('print-only-answer');
+    }
+
     function toggleAnswer(id) {
       const answerDiv = document.getElementById(id);
       if (answerDiv.style.display === 'none' || answerDiv.style.display === '') {

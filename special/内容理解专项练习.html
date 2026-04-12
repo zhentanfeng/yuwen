@@ -97,6 +97,12 @@
   </div>
 
   <script>
+    function printOnlyAnswer() {
+      document.body.classList.add('print-only-answer');
+      window.print();
+      document.body.classList.remove('print-only-answer');
+    }
+
     function toggleAnswer(id) {
       const el = document.getElementById(id);
       el.style.display = el.style.display === 'block' ? 'none' : 'block';

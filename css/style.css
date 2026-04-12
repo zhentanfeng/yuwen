@@ -131,6 +131,18 @@ body {
   .answer-content {
     display: none !important;
   }
+  body.print-only-answer .question-item p,
+  body.print-only-answer .question-item h4,
+  body.print-only-answer .question-title,
+  body.print-only-answer .passage {
+    display: none !important;
+  }
+  body.print-only-answer .answer-content {
+    display: block !important;
+    margin: 15px 0;
+    border-left: 3px solid #4CAF50;
+    padding: 10px;
+  }
   body {
     max-width: none;
     padding: 0;
