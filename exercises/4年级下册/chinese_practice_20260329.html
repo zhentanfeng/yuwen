@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小学语文在线练习 - 一二单元积累运用</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#10B981',
+                        accent: '#F59E0B',
+                        paper: '#FFFBEB',
+                    },
+                    fontFamily: {
+                        sans: ['PingFang SC', 'Microsoft YaHei', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .paper-shadow {
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            }
+            .pinyin-input {
+                border-bottom: 2px dashed #9CA3AF;
+                background: transparent;
+                text-align: center;
+            }
+            .pinyin-input:focus {
+                border-bottom-color: #4F46E5;
+                outline: none;
+            }
+            .correct {
+                background-color: #D1FAE5 !important;
+                border-color: #10B981 !important;
+                color: #065F46 !important;
+            }
+            .incorrect {
+                background-color: #FEE2E2 !important;
+                border-color: #EF4444 !important;
+                color: #991B1B !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-green-50 to-yellow-50 min-h-screen py-8">
+    <div class="max-w-4xl mx-auto px-4">
+        <!-- 头部 -->
+        <header class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary text-white rounded-full text-2xl mb-4 shadow-lg">
+                <i class="fa fa-graduation-cap"></i>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">小学语文在线练习</h1>
+            <p class="text-lg text-gray-600">2026年03月29日 · 一二单元积累运用</p>
+            <div class="flex justify-center gap-4 mt-4">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">
+                    <i class="fa fa-book mr-2"></i>积累运用
+                </span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm">
+                    <i class="fa fa-list-ol mr-2"></i>14道题目
+                </span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-accent/10 text-accent text-sm">
+                    <i class="fa fa-clock-o mr-2"></i>约30分钟
+                </span>
+            </div>
+        </header>
+
+        <!-- 操作按钮 -->
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+            <button onclick="resetQuiz()" class="px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 rounded-xl font-medium shadow transition-all duration-200 hover:shadow-md">
+                <i class="fa fa-refresh mr-2"></i>重新开始
+            </button>
+            <button onclick="checkAnswers()" class="px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-xl font-medium shadow transition-all duration-200 hover:shadow-md">
+                <i class="fa fa-check-circle mr-2"></i>提交答案
+            </button>
+            <button onclick="toggleAnswers()" class="px-6 py-3 bg-secondary hover:bg-secondary/90 text-white rounded-xl font-medium shadow transition-all duration-200 hover:shadow-md">
+                <i class="fa fa-eye mr-2"></i>查看答案
+            </button>
+        </div>
+
+        <!-- 分数显示 -->
+        <div id="scoreCard" class="hidden mb-8">
+            <div class="bg-white rounded-2xl p-6 paper-shadow text-center">
+                <div class="text-5xl font-bold text-primary mb-2" id="finalScore">0</div>
+                <div class="text-gray-600">总分：100分</div>
+                <div id="scoreMessage" class="mt-3 text-lg font-medium"></div>
+            </div>
+        </div>
+
+        <!-- 试卷内容 -->
+        <div class="bg-white rounded-2xl paper-shadow p-8 md:p-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-gray-100">
+                <span class="text-primary mr-2">一、</span>积累与运用
+            </h2>
+
+            <!-- 任务1 -->
+            <div class="mb-8 p-5 bg-paper rounded-xl border border-yellow-100">
+                <h3 class="font-bold text-lg text-gray-800 mb-3">
+                    <i class="fa fa-paint-brush text-accent mr-2"></i>【任务1 绘乡村画卷】
+                </h3>
+                <p class="text-gray-700 leading-relaxed mb-4">你准备为乡村美景写一段介绍词，请完成下面的问题。</p>
+                <div class="bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-lg mb-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        倘若来到乡间，你会看到夕阳在河水中<span class="font-semibold text-primary">A.闪烁</span>着金光。
+                        ①<input type="text" data-answer="蜻" class="pinyin-input w-10" placeholder="qīng">
+                        ②<input type="text" data-answer="蜓" class="pinyin-input w-10" placeholder="tíng">
+                        在河③<input type="text" data-answer="滩" class="pinyin-input w-10" placeholder="tān">
+                        上自在飞舞，燕子朝着屋④<input type="text" data-answer="檐" class="pinyin-input w-10" placeholder="yán">
+                        缓缓飞去。篱笆旁，⑤<input type="text" data-answer="霸" class="pinyin-input w-10" placeholder="bà">
+                        气的母鸡用<span class="font-semibold text-primary">B.锐利</span>的眼神盯着
+                        ⑥<input type="text" data-answer="踏" class="pinyin-input w-10" placeholder="tà">
+                        入领地的生人。树上的⑦<input type="text" data-answer="蝙" class="pinyin-input w-10" placeholder="biān">
+                        ⑧<input type="text" data-answer="蝠" class="pinyin-input w-10" placeholder="fú">
+                        和猫头⑨<input type="text" data-answer="鹰" class="pinyin-input w-10" placeholder="yīng">
+                        做好了夜间工作的准备。⑩<input type="text" data-answer="蹲" class="pinyin-input w-10" placeholder="dūn">
+                        在荷叶上唱歌的青蛙匆匆跳入水中。这幅由动物
+                        <span class="font-semibold text-primary">C.一个一个组合而成</span>的和谐的乡村风景画，
+                        <span class="font-semibold text-primary">D.装饰</span>了我的梦，也成了我平凡生活里的慰藉。
+                    </p>
+                </div>
+
+                <!-- 题目1 -->
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-primary text-white text-sm rounded-full mr-3 mt-0.5">1</span>
+                        <div class="flex-1">
+                            <p class="text-gray-700 mb-2">拟写介绍词时，你发现有些字很难写，请根据拼音写出汉字。</p>
+                            <p class="text-sm text-gray-500 italic"><i class="fa fa-lightbulb-o mr-1"></i>答案已在上面的空格中填写</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 题目2 -->
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-primary text-white text-sm rounded-full mr-3 mt-0.5">2</span>
+                        <div class="flex-1">
+                            <p class="text-gray-700 mb-3">请你判断介绍词中加点字读音的正误。（正确打√，错误打×）</p>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div class="flex items-center">
+                                    <span class="mr-2">倘（shàng）若</span>
+                                    <select data-answer="错误" class="border rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                                        <option value="">请选择</option>
+                                        <option value="正确">√ 正确</option>
+                                        <option value="错误">× 错误</option>
+                                    </select>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="mr-2">篱（lí）笆</span>
+                                    <select data-answer="正确" class="border rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                                        <option value="">请选择</option>
+                                        <option value="正确">√ 正确</option>
+                                        <option value="错误">× 错误</option>
+                                    </select>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="mr-2">和谐（xié）</span>
+                                    <select data-answer="正确" class="border rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                                        <option value="">请选择</option>
+                                        <option value="正确">√ 正确</option>
+                                        <option value="错误">× 错误</option>
+                                    </select>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="mr-2">慰藉（jí）</span>
+                                    <select data-answer="错误" class="border rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                                        <option value="">请选择</option>
+                                        <option value="正确">√ 正确</option>
+                                        <option value="错误">× 错误</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="answer-key hidden mt-2 text-sm text-secondary">
+                                <i class="fa fa-check-circle mr-1"></i>答案：错误、正确、正确、错误
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 题目3 -->
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-primary text-white text-sm rounded-full mr-3 mt-0.5">3</span>
+                        <div class="flex-1">
+                            <p class="text-gray-700 mb-3">为了更好地理解介绍词中的部分词句，请你完成填空。</p>
+                            <div class="space-y-3 ml-4">
+                                <p>① 词语A可以用
+                                    <input type="text" data-answer="闪耀" class="pinyin-input w-16 mx-1" placeholder="">
+                                    （闪耀 暗淡）来代替，短语C可替换为
+                                    <input type="text" data-answer="构成" class="pinyin-input w-16 mx-1" placeholder="">
+                                    （集合 构成）。
+                                </p>
+                                <p>② 词语B在句中的意思是：
+                                    <input type="text" data-answer="目光尖锐" class="pinyin-input w-24 mx-1" placeholder="">
+                                    ；词语D在句中的意思是：
+                                    <input type="text" data-answer="打扮、装扮" class="pinyin-input w-32 mx-1" placeholder="">
+                                    。
+                                </p>
+                            </div>
+                            <div class="answer-key hidden mt-2 text-sm text-secondary">
+                                <i class="fa fa-check-circle mr-1"></i>答案：① 闪耀、构成  ② 目光尖锐；打扮、装扮
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 题目4 -->
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-primary text-white text-sm rounded-full mr-3 mt-0.5">4</span>
+                        <div class="flex-1">
+                            <p class="text-gray-700 mb-2">请你运用介绍词中画横线句子的修辞手法再写一个句子。</p>
+                            <p class="text-sm text-gray-500 italic mb-2"><i class="fa fa-lightbulb-o mr-1"></i>提示：画横线句子运用了拟人的修辞手法</p>
+                            <textarea data-answer="示例：花草们张开双手，拥抱春风。" class="w-full border rounded-lg p-3 h-24 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="请在这里写句子..."></textarea>
+                            <div class="answer-key hidden mt-2 text-sm text-secondary">
+                                <i class="fa fa-check-circle mr-1"></i>示例：花草们张开双手，拥抱春风。蝴蝶在花丛中翩翩起舞。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 感受乡村生活的美好 -->
+            <div class="mb-8 p-5 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-blue-100">
+                <h3 class="font-bold text-lg text-gray-800 mb-3">
+                    <i class="fa fa-moon-o text-blue-500 mr-2"></i>感受乡村生活的美好
+                </h3>
+                <div class="bg-white p-4 rounded-lg mb-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        夏夜，满天①<input type="text" data-answer="闪烁" class="pinyin-input w-16" placeholder="shǎn shuò">的繁星像一颗颗宝石
+                        ②<input type="text" data-answer="装饰" class="pinyin-input w-16" placeholder="zhuāng shì">着夜空。
+                        （<input type="text" data-answer="篱" class="pinyin-input w-8">
+                        <select data-answer="离" class="text-sm ml-1 border rounded"><option>篱</option><option>离</option></select>）
+                        （<input type="text" data-answer="笆" class="pinyin-input w-8">
+                        <select data-answer="芭" class="text-sm ml-1 border rounded"><option>芭</option><option>笆</option></select>）
+                        旁开着几朵稀（<input type="text" data-answer="疏" class="pinyin-input w-8">
+                        <select data-answer="蔬" class="text-sm ml-1 border rounded"><option>疏</option><option>蔬</option></select>）的小花，清风徐徐吹来，树叶吹奏起动听的
+                        ③<input type="text" data-answer="催眠" class="pinyin-input w-16" placeholder="cuī mián">曲，
+                        ④<input type="text" data-answer="河滩" class="pinyin-input w-16" placeholder="hé tān">上时大时小的（
+                        <select data-answer="岛" class="text-sm border rounded"><option>岛</option><option>捣</option></select>
+                        <input type="text" data-answer="捣" class="pinyin-input w-8">）衣声应和着，给人带来心灵的
+                        ⑤<input type="text" data-answer="慰藉" class="pinyin-input w-16" placeholder="wèi jiè">。
+                        ⑥<input type="text" data-answer="茅檐" class="pinyin-input w-16" placeholder="máo yán">下，老
+                        ⑦<input type="text" data-answer="翁" class="pinyin-input w-8" placeholder="wēng">摇着蒲扇，奶奶剥着莲蓬。小妹妹玩着玻璃弹珠，玻璃弹珠掉在了地上，卜落卜落地滚动着。大白鹅在院中大
+                        ⑧<input type="text" data-answer="踏步" class="pinyin-input w-16" placeholder="tà bù">地走来走去。这情景
+                        ⑨<input type="text" data-answer="构" class="pinyin-input w-8" placeholder="gòu">成了一幅绮丽
+                        ⑩<input type="text" data-answer="和谐" class="pinyin-input w-16" placeholder="hé xié">的风景画。
+                    </p>
+                </div>
+
+                <!-- 题目5 -->
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-primary text-white text-sm rounded-full mr-3 mt-0.5">5</span>
+                        <div class="flex-1">
+                            <p class="text-gray-700 mb-3">给文段中的加点字选择正确的读音。</p>
+                            <div class="grid grid-cols-2 gap-4 ml-4">
+                                <div>徐徐（
+                                    <select data-answer="xú" class="border rounded px-2 py-1 text-sm">
+                                        <option value="">请选择</option>
+                                        <option value="xú">xú</option>
+                                        <option value="xǔ">xǔ</option>
+                                    </select>）</div>
+                                <div>剥着莲蓬（
+                                    <select data-answer="bō" class="border rounded px-2 py-1 text-sm">
+                                        <option value="">请选择</option>
+                                        <option value="bō">bō</option>
+                                        <option value="bāo">bāo</option>
+                                    </select>）</div>
+                                <div>卜落卜落（
+                                    <select data-answer="bǔ" class="border rounded px-2 py-1 text-sm">
+                                        <option value="">请选择</option>
+                                        <option value="bo">bo</option>
+                                        <option value="bǔ">bǔ</option>
+                                    </select>）</div>
+                                <div>绮丽（
+                                    <select data-answer="qǐ" class="border rounded px-2 py-1 text-sm">
+                                        <option value="">请选择</option>
+                                        <option value="qí">qí</option>
+                                        <option value="qǐ">qǐ</option>
+                                    </select>）</div>
+                            </div>
+                            <div class="answer-key hidden mt-2 text-sm text-secondary">
+                                <i class="fa fa-check-circle mr-1"></i>答案：xú、bō、bǔ、qǐ
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 题目6 -->
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-primary text-white text-sm rounded-full mr-3 mt-0.5">6</span>
+                        <div class="flex-1">
+                            <p class="text-gray-700 mb-2">画去文段中括号里不正确的字。</p>
+                            <div class="answer-key hidden mt-2 text-sm text-secondary">
+                                <i class="fa fa-check-circle mr-1"></i>答案：画去：离、芭、蔬、岛
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 题目7 -->
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-primary text-white text-sm rounded-full mr-3 mt-0.5">7</span>
+                        <div class="flex-1">
+                            <p class="text-gray-700 mb-2">根据文段中的拼音和语境写字词。</p>
+                            <div class="answer-key hidden mt-2 text-sm text-secondary">
+                                <i class="fa fa-check-circle mr-1"></i>答案：闪烁、装饰、催眠、河滩、慰藉、茅檐、翁、踏步、构、和谐
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 题目8 -->
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-primary text-white text-sm rounded-full mr-3 mt-0.5">8</span>
+                        <div class="flex-1">
+                            <p class="text-gray-700 mb-3">下列加点字与文段中"应和"的"和"读音相同的一项是（　　）</p>
+                            <div class="space-y-2 ml-4">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="q8" value="A" data-answer="A" class="mr-3">
+                                    <span>A．唱和</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="q8" value="B" class="mr-3">
+                                    <span>B．温和</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="q8" value="C" class="mr-3">
+                                    <span>C．暖和</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="q8" value="D" class="mr-3">
+                                    <span>D．和面</span>
+                                </label>
+                            </div>
+                            <div class="answer-key hidden mt-2 text-sm text-secondary">
+                                <i class="fa fa-check-circle mr-1"></i>答案：A
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 题目9 -->
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-primary text-white text-sm rounded-full mr-3 mt-0.5">9</span>
+                        <div class="flex-1">
+                            <p class="text-gray-700 mb-3">文段中画横线的句子表达了作者怎样的思想感情？下列说法最恰当的一项是（　　）</p>
+                            <div class="space-y-2 ml-4">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="q9" value="A" class="mr-3">
+                                    <span>A．思念亲人。</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="q9" value="B" class="mr-3">
+                                    <span>B．对乡村生活的回忆和留恋。</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="q9" value="C" class="mr-3">
+                                    <span>C．思念家乡。</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="q9" value="D" data-answer="D" class="mr-3">
+                                    <span>D．对乡村生活的喜爱和赞美。</span>
+                                </label>
+                            </div>
+                            <div class="answer-key hidden mt-2 text-sm text-secondary">
+                                <i class="fa fa-check-circle mr-1"></i>答案：D
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 状元小学宣传栏 -->
+            <div class="mb-8 p-5 bg-gradient-to-r from-green-50 to-teal-50 rounded-xl border border-green-100">
+                <h3 class="font-bold text-lg text-gray-800 mb-3">
+                    <i class="fa fa-university text-green-500 mr-2"></i>状元小学宣传栏
+                </h3>
+                <p class="text-gray-700 mb-4">下面是状元小学宣传栏中的一段话，读一读，完成练习。</p>
+                <div class="bg-white p-4 rounded-lg mb-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        想要<input type="text" data-answer="拥有" class="pinyin-input w-16" placeholder="yōng yǒu">
+                        <input type="text" data-answer="健康" class="pinyin-input w-16" placeholder="jiàn kāng">的身体，疾病
+                        <input type="text" data-answer="预防" class="pinyin-input w-16" placeholder="yù fáng">不容懈怠。外出戴口罩，可以消除感染
+                        <input type="text" data-answer="隐" class="pinyin-input w-8" placeholder="yǐn">患。同时也
+                        <input type="text" data-answer="需要" class="pinyin-input w-16" placeholder="xū yào">养成良好习惯，多吃
+                        <input type="text" data-answer="蔬菜" class="pinyin-input w-16" placeholder="shū cài">和水果，加强体育锻炼。
+                    </p>
+                </div>
+
+                <!-- 题目10 -->
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-primary text-white text-sm rounded-full mr-3 mt-0.5">10</span>
+                        <div class="flex-1">
+                            <p class="text-gray-700 mb-2">根据语境，看拼音写字词。</p>
+                            <div class="answer-key hidden mt-2 text-sm text-secondary">
+                                <i class="fa fa-check-circle mr-1"></i>答案：拥有、健康、预防、隐、需要、蔬菜
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 题目11 -->
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-primary text-white text-sm rounded-full mr-3 mt-0.5">11</span>
+                        <div class="flex-1">
+                            <p class="text-gray-700 mb-3">加点字"疾"是
+                                <input type="text" data-answer="半包围" class="pinyin-input w-20" placeholder="">结构，如果用部首查字法，要先查部首
+                                <input type="text" data-answer="疒" class="pinyin-input w-8" placeholder="">，再查
+                                <input type="text" data-answer="5" class="pinyin-input w-8" placeholder="">画。给下列加点的"疾"字选择合适的解释。（填序号）
+                            </p>
+                            <div class="bg-gray-50 p-3 rounded-lg mb-3 text-sm">
+                                <strong>疾 jí</strong> ①病，身体不舒适；②恨；③快，迅速，猛烈；④疼痛。
+                            </div>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                <div>疾病
+                                    <input type="text" data-answer="①" class="pinyin-input w-8 ml-2" placeholder=""></div>
+                                <div>疾步如飞
+                                    <input type="text" data-answer="③" class="pinyin-input w-8 ml-2" placeholder=""></div>
+                                <div>疾恶如仇
+                                    <input type="text" data-answer="②" class="pinyin-input w-8 ml-2" placeholder=""></div>
+                                <div>痛心疾首
+                                    <input type="text" data-answer="④" class="pinyin-input w-8 ml-2" placeholder=""></div>
+                            </div>
+                            <div class="answer-key hidden mt-2 text-sm text-secondary">
+                                <i class="fa fa-check-circle mr-1"></i>答案：半包围；疒；5；①、③、②、④
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 琥珀资料卡 -->
+            <div class="mb-8 p-5 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl border border-amber-100">
+                <h3 class="font-bold text-lg text-gray-800 mb-3">
+                    <i class="fa fa-gem text-amber-500 mr-2"></i>琥珀资料卡
+                </h3>
+                <p class="text-gray-700 mb-4">小翼制作了琥珀资料卡，请你读一读，并完成练习。</p>
+                <div class="bg-white p-4 rounded-lg mb-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        琥珀是远古植物①<input type="text" data-answer="渗" class="pinyin-input w-8" placeholder="shèn">出的树脂
+                        ②<input type="text" data-answer="埋" class="pinyin-input w-8" placeholder="mái">藏于地层，经历漫长的岁月而形成的化石。欣赏左边的琥珀，便可以推测几千万年前的情形：一个夏日的
+                        ③<input type="text" data-answer="晌午" class="pinyin-input w-16" placeholder="shǎng wǔ">，太阳
+                        ④<input type="text" data-answer="热辣辣" class="pinyin-input w-20" placeholder="rè là là">地照射着松林。一只蜘蛛准备把苍蝇当作
+                        ⑤<input type="text" data-answer="美餐" class="pinyin-input w-16" placeholder="měi cān">，结果松脂滴落，它们被
+                        ⑥<input type="text" data-answer="淹没" class="pinyin-input w-16" placeholder="yān mò">其中，拼命挣扎了一番，终于不动了……想到这里，我不禁心潮澎湃。
+                    </p>
+                </div>
+
+                <!-- 题目12 -->
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-primary text-white text-sm rounded-full mr-3 mt-0.5">12</span>
+                        <div class="flex-1">
+                            <p class="text-gray-700 mb-2">根据拼音，依次写出资料卡中的字词。</p>
+                            <div class="answer-key hidden mt-2 text-sm text-secondary">
+                                <i class="fa fa-check-circle mr-1"></i>答案：①渗、②埋、③晌午、④热辣辣、⑤美餐、⑥淹没
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 题目13 -->
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-primary text-white text-sm rounded-full mr-3 mt-0.5">13</span>
+                        <div class="flex-1">
+                            <p class="text-gray-700 mb-3">资料卡中加点字词的读音有误的一项是（　　）。</p>
+                            <div class="space-y-2 ml-4">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="q13" value="A" class="mr-3">
+                                    <span>A．琥珀（hǔ pò）</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="q13" value="B" data-answer="B" class="mr-3">
+                                    <span>B．树脂（zhǐ）</span>
+                                </label>
+                                <label class="flex items-center
