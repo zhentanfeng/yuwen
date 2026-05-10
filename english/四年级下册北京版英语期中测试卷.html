@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>四年级下册北京版英语期中测试卷</title>
+  <title>四年级下册北京版英语期中易错点专项练习</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
     @media print {
@@ -27,162 +27,151 @@
       font-family: 'Times New Roman', serif;
       font-size: 16px;
     }
+    .highlight {
+      color: #d32f2f;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <button class="print-btn" onclick="window.print()">🖨️ 打印试卷（打印时自动隐藏答案）</button>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印练习题（打印时自动隐藏答案）</button>
 
   <div class="header">
-    <h1>📝 四年级下册北京版英语期中测试卷</h1>
-    <p>考试时间：60分钟 | 满分：100分 | 范围：Unit 1-Unit 4</p>
+    <h1>📝 四年级下册北京版英语期中易错点专项练习</h1>
+    <p>范围：Unit 1-Unit 4 | 满分：100分 | 专为查漏补缺设计，重点考察高频易错知识点</p>
   </div>
 
   <div class="question-card">
-    <!-- 听力部分 -->
+    <!-- 考前易错点提示 -->
     <div class="question-item">
-      <h3>第一部分 听力（共20分）</h3>
+      <h3>⚠️ 期中高频易错知识点提示（先复习再做题）</h3>
       <p class="english-text">
-        I. 听录音，选出你所听到的单词。（每题2分，共10分）<br>
-        1. A. Chinese B. maths C. English<br>
-        2. A. sing B. dance C. draw<br>
-        3. A. doctor B. nurse C. teacher<br>
-        4. A. spring B. summer C. winter<br>
-        5. A. Monday B. Tuesday C. Friday
+        1. <span class="highlight">介词on/in/at必考易错点</span>：具体星期几/具体某一天的上午下午用on，月份/季节用in，具体几点用at<br>
+        2. <span class="highlight">情态动词can易错点</span>：can后面永远加动词原形，否定是can't，一般疑问句Can开头，回答Yes, ...can. / No, ...can't.<br>
+        3. <span class="highlight">第三人称单数易错点</span>：主语是he/she/it/单个人名时，动词要加s/es，do→does, go→goes, like→likes<br>
+        4. <span class="highlight">名词复数易错点</span>：man→men, woman→women, child→children, sheep→sheep不变<br>
+        5. <span class="highlight">There be句型易错点</span>：就近原则，靠近be动词的是单数就用is，复数就用are
       </p>
-      <button class="answer-toggle" onclick="toggleAnswer('ans1')">查看听力答案</button>
-      <div id="ans1" class="answer-content" style="display: none;">
-        <div class="answer-block">
-          <strong>听力原文及答案：</strong><br>
-          录音原文：1. English 2. sing 3. nurse 4. spring 5. Tuesday<br>
-          答案：1. C 2. A 3. B 4. A 5. B
-        </div>
-      </div>
-    </div>
-
-    <div class="question-item">
-      <p class="english-text">
-        II. 听录音，判断句子与所听内容是(T)否(F)相符。（每题2分，共10分）<br>
-        1. I have maths on Monday. ( )<br>
-        2. My sister can dance very well. ( )<br>
-        3. My father is a driver. ( )<br>
-        4. My favourite season is summer. ( )<br>
-        5. It's sunny and warm today. ( )
-      </p>
-      <button class="answer-toggle" onclick="toggleAnswer('ans2')">查看听力答案</button>
-      <div id="ans2" class="answer-content" style="display: none;">
-        <div class="answer-block">
-          <strong>听力原文及答案：</strong><br>
-          录音原文：<br>
-          1. I have Chinese on Monday.<br>
-          2. My sister can dance very well.<br>
-          3. My father is a doctor.<br>
-          4. My favourite season is summer.<br>
-          5. It's cloudy and cool today.<br>
-          答案：1. F 2. T 3. F 4. T 5. F
-        </div>
-      </div>
     </div>
 
     <!-- 笔试部分 -->
     <div class="question-item">
-      <h3>第二部分 笔试（共80分）</h3>
+      <h3>笔试部分（共100分）</h3>
+      
       <p class="english-text">
-        III. 选出每组单词中不同类的一项。（每题2分，共10分）<br>
+        I. 选出每组单词中不同类的一项，重点考察词义辨析。（每题2分，共10分）<br>
         1. A. Chinese B. subject C. maths ( )<br>
         2. A. sing B. dance C. song ( )<br>
         3. A. doctor B. father C. nurse ( )<br>
         4. A. spring B. season C. winter ( )<br>
         5. A. Monday B. week C. Friday ( )
       </p>
-      <button class="answer-toggle" onclick="toggleAnswer('ans3')">查看答案</button>
+      <button class="answer-toggle" onclick="toggleAnswer('ans1')">查看答案+易错点解析</button>
+      <div id="ans1" class="answer-content" style="display: none;">
+        <div class="answer-block">
+          <strong>答案：</strong>1. B 2. C 3. B 4. B 5. B<br><br>
+          <strong>易错点提示：</strong>很多孩子分不清总称和具体分类，比如subject是所有学科的总称，Chinese和maths是具体学科，这是期中考试的必考题哦
+        </div>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <p class="english-text">
+        II. 用所给单词的正确形式填空，重点考察语法易错点。（每题3分，共15分）<br>
+        1. I ________ (can) swim, so I'm afraid of water.<br>
+        2. She ________ (go) to school by bike every day.<br>
+        3. There are two ________ (man) under the tree.<br>
+        4. Look! So many ________ (child) are playing in the park.<br>
+        5. ________ (she) favourite colour is pink.
+      </p>
+      <button class="answer-toggle" onclick="toggleAnswer('ans2')">查看答案+易错点解析</button>
+      <div id="ans2" class="answer-content" style="display: none;">
+        <div class="answer-block">
+          <strong>答案：</strong>1. can't 2. goes 3. men 4. children 5. Her<br><br>
+          <strong>易错点提示：</strong><br>
+          2题：go的第三人称单数是加es不是加s，很多孩子容易写错哦<br>
+          3题4题：man和child的复数是不规则变化，是期中考试高频考点
+        </div>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <p class="english-text">
+        III. 单项选择，全部都是期中高频易错真题。（每题2分，共30分）<br>
+        1. We have PE ________ Tuesday afternoon.<br>
+        <span class="highlight">【介词高频易错题】</span><br>
+        A. in B. on C. at<br>
+        2. My father ________ to work by car every day.<br>
+        <span class="highlight">【三单高频易错题】</span><br>
+        A. go B. goes C. going<br>
+        3. —Can you play the piano? —No, I ________.<br>
+        <span class="highlight">【can用法易错题】</span><br>
+        A. can B. can't C. don't<br>
+        4. ________ your mother do? She is a nurse.<br>
+        <span class="highlight">【助动词易错题】</span><br>
+        A. What B. What does C. What do<br>
+        5. There ________ a book and two pens on the desk.<br>
+        <span class="highlight">【There be就近原则易错题】</span><br>
+        A. is B. are C. am<br>
+        6. —________ is it today? —It's Friday.<br>
+        A. What day B. What time C. What colour<br>
+        7. —________ is your favourite season? —Spring.<br>
+        A. What B. When C. Where<br>
+        8. It's ________ in summer in Beijing.<br>
+        A. cold B. cool C. hot<br>
+        9. He can ________ basketball very well.<br>
+        <span class="highlight">【can后面加动词原形易错题】</span><br>
+        A. plays B. play C. playing<br>
+        10. My sister likes ________ pictures.<br>
+        A. draw B. drawing C. draws<br>
+        11. —How's the ________ today? —It's rainy.<br>
+        A. weather B. season C. day<br>
+        12. My mother is ________ teacher. She teaches English.<br>
+        A. a B. an C. /<br>
+        13. —What ________ do you have? —I have Chinese, maths and English.<br>
+        A. subject B. subjects C. a subject<br>
+        14. I can sing, ________ I can't dance.<br>
+        A. and B. but C. or<br>
+        15. —________ do you go to school? —By bus.<br>
+        A. How B. What C. Where
+      </p>
+      <button class="answer-toggle" onclick="toggleAnswer('ans3')">查看答案+易错点解析</button>
       <div id="ans3" class="answer-content" style="display: none;">
         <div class="answer-block">
-          <strong>答案：</strong>1. B 2. C 3. B 4. B 5. B<br>
-          <strong>解析：</strong><br>
-          1. AC是具体学科，B是学科总称<br>
-          2. AB是动词，C是名词<br>
-          3. AC是职业，B是家庭成员<br>
-          4. AC是具体季节，B是季节总称<br>
-          5. AC是具体星期，B是星期总称
+          <strong>答案：</strong>1.B 2.B 3.B 4.B 5.A 6.A 7.A 8.C 9.B 10.B 11.A 12.A 13.B 14.B 15.A<br><br>
+          <strong>高频错题解析：</strong><br>
+          1题：具体某一天的下午一定要用on，不是in！这道题90%的孩子第一次做都会错<br>
+          5题：There be就近原则，只看离它最近的名词，最近的是a book单数，所以用is，不管后面的复数<br>
+          9题：can后面永远加动词原形，不管主语是谁，这是必考送分题，但很多孩子还是会错
         </div>
       </div>
     </div>
 
     <div class="question-item">
       <p class="english-text">
-        IV. 按要求写出下列单词的正确形式。（每题2分，共10分）<br>
-        1. can not（缩写形式） ________<br>
-        2. go（第三人称单数形式） ________<br>
-        3. man（复数形式） ________<br>
-        4. child（复数形式） ________<br>
-        5. she（形容词性物主代词） ________
-      </p>
-      <button class="answer-toggle" onclick="toggleAnswer('ans4')">查看答案</button>
-      <div id="ans4" class="answer-content" style="display: none;">
-        <div class="answer-block">
-          <strong>答案：</strong>1. can't 2. goes 3. men 4. children 5. her
-        </div>
-      </div>
-    </div>
-
-    <div class="question-item">
-      <p class="english-text">
-        V. 单项选择。（每题2分，共20分）<br>
-        1. What ______ do you have on Monday?<br>
-        A. subject B. subjects C. a subject<br>
-        2. I have PE ______ Tuesday afternoon.<br>
-        A. in B. on C. at<br>
-        3. —What can you do? —I ______ play the piano.<br>
-        A. can B. can't C. am<br>
-        4. —Can you swim? —No, I ______.<br>
-        A. can B. can't C. don't<br>
-        5. —What does your mother do? —______ is a nurse.<br>
-        A. He B. She C. I<br>
-        6. My father ______ to work by car every day.<br>
-        A. go B. goes C. going<br>
-        7. —______ is your favourite season? —Spring.<br>
-        A. What B. When C. Where<br>
-        8. It's ______ in summer in Beijing.<br>
-        A. cold B. cool C. hot<br>
-        9. There ______ a book and two pens on the desk.<br>
-        A. is B. are C. am<br>
-        10. —______ is it today? —It's Friday.<br>
-        A. What day B. What time C. What colour
-      </p>
-      <button class="answer-toggle" onclick="toggleAnswer('ans5')">查看答案+解析</button>
-      <div id="ans5" class="answer-content" style="display: none;">
-        <div class="answer-block">
-          <strong>答案：</strong>1. B 2. B 3. A 4. B 5. B 6. B 7. A 8. C 9. A 10. A<br><br>
-          <strong>高频考点解析：</strong><br>
-          2题：具体某一天的上午/下午/晚上用介词on，是期中必考考点<br>
-          6题：主语是第三人称单数时动词要加s/es，语法必考重点<br>
-          9题：There be句型就近原则，靠近be动词的是单数就用is
-        </div>
-      </div>
-    </div>
-
-    <div class="question-item">
-      <p class="english-text">
-        VI. 按要求完成句子。（每题3分，共15分）<br>
-        1. I can play basketball.（改为否定句）<br>
+        IV. 按要求完成句子，重点考察句型转换易错点。（每题3分，共15分）<br>
+        1. I can play football.（改为否定句）<br>
         ________________________________________________<br>
-        2. My father is a doctor.（对画线部分提问）<br>
+        2. My father is a doctor.（对画线部分提问，问职业）<br>
         ________________________________________________<br>
         3. I like spring best.（改为同义句）<br>
         ________________________________________________<br>
-        4. It's sunny today.（对画线部分提问）<br>
+        4. It's sunny today.（对画线部分提问，问天气，两种写法都可以）<br>
         ________________________________________________<br>
         5. you, sing, can, English, songs (?)（连词成句）<br>
         ________________________________________________
       </p>
-      <button class="answer-toggle" onclick="toggleAnswer('ans6')">查看答案</button>
-      <div id="ans6" class="answer-content" style="display: none;">
+      <button class="answer-toggle" onclick="toggleAnswer('ans4')">查看答案+易错点提示</button>
+      <div id="ans4" class="answer-content" style="display: none;">
         <div class="answer-block">
           <strong>参考答案：</strong><br>
-          1. I can't play basketball.<br>
+          1. I can't play football.<br>
+          <span class="highlight">易错点：</span>can的否定直接加not，不要加don't<br>
           2. What does your father do? / What is your father's job?<br>
+          <span class="highlight">易错点：</span>问职业要用does不是do，因为your father是第三人称单数<br>
           3. My favourite season is spring.<br>
           4. How's the weather today? / What's the weather like today?<br>
+          <span class="highlight">易错点：</span>两种写法都对，注意不要少了like<br>
           5. Can you sing English songs?
         </div>
       </div>
@@ -190,7 +179,35 @@
 
     <div class="question-item">
       <p class="english-text">
-        VII. 阅读理解。（每题3分，共15分）<br><br>
+        V. 找出下列句子中的错误并改正，专门针对孩子常犯的语法错误设计。（每题3分，共15分）<br>
+        例：I likes apples. 改为：I like apples.<br><br>
+        1. He go to school at 7 every day. 改为：________________<br>
+        2. I can plays the piano. 改为：________________<br>
+        3. There are two woman in the room. 改为：________________<br>
+        4. We have art in Wednesday morning. 改为：________________<br>
+        5. My father like summer best. 改为：________________
+      </p>
+      <button class="answer-toggle" onclick="toggleAnswer('ans5')">查看答案+错误点分析</button>
+      <div id="ans5" class="answer-content" style="display: none;">
+        <div class="answer-block">
+          <strong>答案：</strong><br>
+          1. He goes to school at 7 every day.<br>
+          <span class="highlight">错误分析：</span>主语he是第三人称单数，动词go要加es<br>
+          2. I can play the piano.<br>
+          <span class="highlight">错误分析：</span>can后面必须加动词原形，不能加s<br>
+          3. There are two women in the room.<br>
+          <span class="highlight">错误分析：</span>woman的复数是women，是不规则变化<br>
+          4. We have art on Wednesday morning.<br>
+          <span class="highlight">错误分析：</span>具体某一天的上午要用on不是in<br>
+          5. My father likes summer best.<br>
+          <span class="highlight">错误分析：</span>my father是第三人称单数，like要加s
+        </div>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <p class="english-text">
+        VI. 阅读理解，考察知识点综合运用能力。（每题3分，共15分）<br><br>
         Hi, I'm Lily. I'm a student in Grade Four. Let me tell you about my school life.<br>
         I go to school from Monday to Friday. We have many subjects at school: Chinese, maths, English, music, art, PE and science. My favourite subject is English, because I like my English teacher very much. She is kind and beautiful.<br>
         After school, I have many hobbies. I can sing and dance. I can draw pictures too. But I can't swim. My favourite season is spring. It's warm and sunny. I can fly a kite with my friends in the park.<br>
@@ -202,30 +219,24 @@
         4. Lily can swim very well. ( )<br>
         5. Lily's mother is a Chinese teacher. ( )
       </p>
-      <button class="answer-toggle" onclick="toggleAnswer('ans7')">查看答案+解析</button>
-      <div id="ans7" class="answer-content" style="display: none;">
+      <button class="answer-toggle" onclick="toggleAnswer('ans6')">查看答案+答题技巧</button>
+      <div id="ans6" class="answer-content" style="display: none;">
         <div class="answer-block">
           <strong>答案：</strong>1. T 2. T 3. F 4. F 5. T<br><br>
           <strong>答题技巧提示：</strong><br>
-          做阅读理解题先看题目，带着问题回到原文找答案，定位到关键词所在的句子就能找到正确答案，期中考试这类题很多都是原文原句哦~
+          做阅读理解题先看题目，带着问题回到原文找答案，定位到关键词所在的句子就能找到正确答案，期中考试这类题很多都是原文原句，不要丢分哦！
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="question-item">
-      <p class="english-text">
-        VIII. 书面表达。（10分）<br>
-        请你以"My School Life"为题，写一篇小短文介绍你的学校生活，包括你上学的时间、喜欢的科目、会做的事情等，不少于5句话。
-      </p>
-      <button class="answer-toggle" onclick="toggleAnswer('ans8')">查看参考范文</button>
-      <div id="ans8" class="answer-content" style="display: none;">
-        <div class="answer-block">
-          <strong>参考范文：</strong><br>
-          My School Life<br><br>
-          Hello, everyone! My name is Tom. I'm in Grade Four. I go to school from Monday to Friday. We have many subjects at school. My favourite subject is PE, because I like playing basketball. I can play basketball very well. After school, I often play basketball with my friends. I like my school life very much.
-        </div>
-      </div>
-    </div>
+  <div class="question-card">
+    <h3>📊 错题分析参考</h3>
+    <p>做完后对照答案统计错题：</p>
+    <p>✅ 如果错的大多是介词题：重点复习in/on/at的用法区别</p>
+    <p>✅ 如果错的大多是三单题：重点复习第三人称单数动词变化规则</p>
+    <p>✅ 如果错的大多是can相关题：重点复习情态动词can的用法</p>
+    <p>✅ 如果错的大多是句型转换：多背课文原句，熟悉句型结构</p>
   </div>
 
   <script>
