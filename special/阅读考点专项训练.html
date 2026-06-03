@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>四年级下册 - 阅读考点专项训练 | 小学语文题库</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .exercise-block {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .exercise-title {
+      font-weight: 700;
+      font-size: 18px;
+      color: #4F46E5;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #EEF2FF;
+    }
+    .reading-text {
+      background: #F9FAFB;
+      padding: 18px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      line-height: 1.9;
+      border-left: 4px solid #E5E7EB;
+    }
+    .question-item {
+      margin: 18px 0;
+      padding: 15px;
+      background: #FEFCE8;
+      border-radius: 8px;
+    }
+    .question-num {
+      font-weight: 600;
+      color: #92400E;
+      margin-bottom: 8px;
+    }
+    .answer-area {
+      margin-top: 12px;
+    }
+    .answer-input {
+      width: 100%;
+      min-height: 80px;
+      padding: 12px;
+      border: 2px solid #E5E7EB;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      resize: vertical;
+    }
+    .answer-input:focus {
+      outline: none;
+      border-color: #4F46E5;
+    }
+    .answer-section {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px dashed #D1D5DB;
+      display: none;
+    }
+    .answer-section.show {
+      display: block;
+    }
+    .correct-answer {
+      background: #ECFDF5;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #10B981;
+    }
+    .answer-title {
+      font-weight: 600;
+      color: #065F46;
+      margin-bottom: 8px;
+    }
+    .answer-tips {
+      background: #EFF6FF;
+      padding: 12px 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #1E40AF;
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 30px 0;
+      flex-wrap: wrap;
+      position: sticky;
+      bottom: 10px;
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 100;
+    }
+    .btn {
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: #4F46E5;
+      color: white;
+    }
+    .btn-success {
+      background: #059669;
+      color: white;
+    }
+    .btn-warning {
+      background: #D97706;
+      color: white;
+    }
+    .highlight {
+      background: linear-gradient(180deg, transparent 60%, #FDE68A 60%);
+      padding: 0 4px;
+      font-weight: 500;
+    }
+    .point-tag {
+      display: inline-block;
+      background: #FEE2E2;
+      color: #991B1B;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-left: 10px;
+    }
+    .nav-menu {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .nav-title {
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 12px;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .nav-link {
+      padding: 6px 12px;
+      background: #EEF2FF;
+      color: #4338CA;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .nav-link:hover {
+      background: #4F46E5;
+      color: white;
+    }
+    @media print {
+      .btn-group, .nav-menu {
+        display: none !important;
+      }
+      .answer-section {
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📚 四年级下册 · 阅读考点专项训练</h1>
+    <p>全册8大语文要素 | 18道精选真题 | 每道配标准答案+答题技巧</p>
+  </div>
+
+  <div class="container">
+    <!-- 导航菜单 -->
+    <div class="nav-menu">
+      <div class="nav-title">📋 考点分布</div>
+      <div class="nav-links">
+        <a href="#unit1" class="nav-link">体会思想感情（2题）</a>
+        <a href="#unit2" class="nav-link">说明方法（4题）</a>
+        <a href="#unit2-2" class="nav-link">说明文语言（2题）</a>
+        <a href="#unit4" class="nav-link">明贬实褒（2题）</a>
+        <a href="#unit6" class="nav-link">环境描写（2题）</a>
+        <a href="#unit6-2" class="nav-link">内容概括（2题）</a>
+        <a href="#unit7" class="nav-link">人物品质（4题）</a>
+      </div>
+    </div>
+
+    <!-- ======================================
+         第一单元考点：体会思想感情（2题）
+         ====================================== -->
+    <div class="exercise-block" id="unit1">
+      <div class="exercise-title">
+        考点一：抓住关键语句，体会思想感情
+        <span class="point-tag">共2题</span>
+      </div>
+
+      <!-- 第1题 -->
+      <div class="reading-text">
+        <strong>乡村的黄昏</strong><br><br>
+        黄昏时分，乡村美得像一幅画。夕阳把金色的光洒在田野上，麦穗儿轻轻摇晃着脑袋，好像在跳着欢快的舞蹈。村边的小河闪着粼粼的波光，鱼儿时不时跃出水面，划出一道道美丽的弧线。家家户户的烟囱里升起了袅袅炊烟，饭菜的香味飘满了整个村子。孩子们放学了，背着书包蹦蹦跳跳地走在回家的小路上，银铃般的笑声在空气中回荡。大人们扛着锄头从田里回来，脸上挂着满足的笑容。啊，我爱这宁静而美丽的乡村黄昏！
+      </div>
+
+      <div class="question-item">
+        <div class="question-num">第1题</div>
+        <p>认真读最后一句话，说说你从中体会到作者怎样的思想感情？作者是通过哪些景物来表达这种感情的？</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 标准答案</div>
+            <p>我从中体会到作者对乡村黄昏的<strong>喜爱和赞美</strong>之情。作者通过描写<strong>夕阳、田野、麦穗、小河、炊烟、放学的孩子、归来的大人</strong>这些景物，展现了乡村黄昏的美丽和宁静，表达了对乡村生活的热爱和向往。</p>
+          </div>
+          <div class="answer-tips">
+            💡 <strong>答题技巧：</strong>先点明情感（喜爱/赞美/向往），再列举文中具体的景物，最后说明这些景物共同营造了怎样的氛围。
+          </div>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="question-num">第2题</div>
+        <p>文中说"麦穗儿轻轻摇晃着脑袋，好像在跳着欢快的舞蹈"，这句话运用了什么修辞手法？你从中体会到什么？</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 标准答案</div>
+            <p>这句话运用了<strong>拟人</strong>的修辞手法，把麦穗当作人来写，说它"摇晃着脑袋""跳着欢快的舞蹈"。我从中体会到麦穗在夕阳下随风摆动的样子很美，也体会到作者看到这番景象时<strong>愉悦的心情</strong>和对乡村景物的<strong>喜爱之情</strong>。</p>
+          </div>
+          <div class="answer-tips">
+            💡 <strong>答题技巧：</strong>①点明修辞手法 ②说明写了什么内容 ③表达了什么情感/营造了什么氛围。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================
+         第二单元考点：说明方法（4题）
+         ====================================== -->
+    <div class="exercise-block" id="unit2">
+      <div class="exercise-title">
+        考点二：说明方法的识别与作用分析
+        <span class="point-tag">共4题 · 本册重点</span>
+      </div>
+
+      <div class="reading-text">
+        <strong>神奇的纳米技术</strong><br><br>
+        ①纳米技术是20世纪90年代兴起的高新技术。什么是纳米呢？纳米是非常非常小的长度单位，1纳米等于十亿分之一米。如果把直径为1纳米的小球放到乒乓球上，相当于把乒乓球放在地球上，可见纳米有多么小。<br><br>
+        ②纳米技术就在我们身边。冰箱里如果使用一种纳米涂层，就会具有杀菌和除臭功能，能够使蔬菜保鲜期更长。有一种叫作"碳纳米管"的神奇材料，比钢铁结实百倍，而且非常轻，将来我们有可能坐上"碳纳米管天梯"到太空旅行。
+      </div>
+
+      <!-- 第3题 -->
+      <div class="question-item">
+        <div class="question-num">第3题</div>
+        <p>第①自然段中画线的句子（1纳米等于十亿分之一米）运用了什么说明方法？这样写有什么好处？</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 标准答案</div>
+            <p>这句话运用了<strong>列数字</strong>的说明方法。用"十亿分之一米"这个具体的数字，<strong>准确、科学地说明了纳米是非常小的长度单位</strong>，让读者对纳米的大小有清晰的认识，增强了文章的说服力。</p>
+          </div>
+          <div class="answer-tips">
+            💡 <strong>答题模板：</strong>运用列数字的说明方法，准确具体地说明了事物____的特点。
+          </div>
+        </div>
+      </div>
+
+      <!-- 第4题 -->
+      <div class="question-item">
+        <div class="question-num">第4题</div>
+        <p>第①自然段中"如果把直径为1纳米的小球放到乒乓球上，相当于把乒乓球放在地球上"这句话运用了什么说明方法？有什么作用？</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 标准答案</div>
+            <p>这句话运用了<strong>作比较</strong>的说明方法。把"1纳米的小球放在乒乓球上"和"乒乓球放在地球上"作比较，<strong>突出强调了纳米非常小的特点</strong>，让读者更容易理解。</p>
+          </div>
+          <div class="answer-tips">
+            💡 <strong>答题模板：</strong>运用作比较的说明方法，突出强调了事物____的特点。
+          </div>
+        </div>
+      </div>
+
+      <!-- 第5题 -->
+      <div class="question-item">
+        <div class="question-num">第5题</div>
+        <p>第②自然段举了冰箱纳米涂层的例子，运用了什么说明方法？这样写有什么好处？</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 标准答案</div>
+            <p>运用了<strong>举例子</strong>的说明方法。通过举"冰箱使用纳米涂层可以杀菌除臭、延长蔬菜保鲜期"这个生活中常见的例子，<strong>具体形象地说明了纳米技术就在我们身边，与我们的生活息息相关</strong>，让抽象的知识变得通俗易懂。</p>
+          </div>
+          <div class="answer-tips">
+            💡 <strong>答题模板：</strong>运用举例子的说明方法，具体形象地说明了事物____的特点。
+          </div>
+        </div>
+      </div>
+
+      <!-- 第6题 -->
+      <div class="question-item">
+        <div class="question-num">第6题</div>
+        <p>"有一种叫作'碳纳米管'的神奇材料，比钢铁结实百倍"这句话除了作比较，还运用了什么说明方法？这样写好在哪里？</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 标准答案</div>
+            <p>还运用了<strong>打比方</strong>的说明方法，把"碳纳米管"比作"天梯"。这样写<strong>生动形象地说明了碳纳米管既结实又轻的特点</strong>，让读者更容易想象出碳纳米管的神奇用途，富有画面感。</p>
+          </div>
+          <div class="answer-tips">
+            💡 <strong>答题模板：</strong>运用打比方的说明方法，生动形象地说明了事物____的特点。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================
+         第二单元考点2：说明文语言赏析（2题）
+         ====================================== -->
+    <div class="exercise-block" id="unit2-2">
+      <div class="exercise-title">
+        考点三：说明文语言赏析（加点词能否删去）
+        <span class="point-tag">共2题 · 必考大题</span>
+      </div>
+
+      <div class="reading-text">
+        <strong>恐龙无处不有（节选）</strong><br><br>
+        大约在两亿四千万年前，地球上第一种恐龙出现了。它和狗一般大小，两条后腿粗壮有力，能够支撑起整个身体。数千万年后，它的后代繁衍成一个形态各异的庞大家族。有些恐龙像它们的祖先一样用两足奔跑，有些恐龙则用四足行走。有些恐龙身长几十米，重达数十吨；有些恐龙则身材小巧，体重可能只有几千克。
+      </div>
+
+      <!-- 第7题 -->
+      <div class="question-item">
+        <div class="question-num">第7题</div>
+        <p>"大约在两亿四千万年前，地球上第一种恐龙出现了"这句话中的"大约"能否删掉？为什么？</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 标准答案（5步答题法）</div>
+            <p>不能删掉。<br>
+            ①"大约"表示<strong>估计、不确定</strong>的意思。<br>
+            ②加上这个词，句义为第一种恐龙出现的时间大概在两亿四千万年前，<strong>不是精准确定的年份</strong>。<br>
+            ③如果删掉，句子就变成了确定就是两亿四千万年前，<strong>说法太绝对，与实际情况不符</strong>。<br>
+            ④这个词语体现了说明文语言的<strong>准确性、严谨性和科学性</strong>。</p>
+          </div>
+          <div class="answer-tips">
+            💡 <strong>记住5步法：</strong>表态→释义→原句意思→删掉后的变化→总结语言特点。照着套就能拿满分！
+          </div>
+        </div>
+      </div>
+
+      <!-- 第8题 -->
+      <div class="question-item">
+        <div class="question-num">第8题</div>
+        <p>"有些恐龙则身材小巧，体重可能只有几千克"这句话中的"可能"能否删掉？请说明理由。</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 标准答案</div>
+            <p>不能删掉。<br>
+            "可能"表示<strong>推测、估计</strong>的意思。加上这个词，说明有些小型恐龙的体重大概只有几千克，是科学家根据化石推测的，不一定完全准确。如果删掉，就变成了肯定只有几千克，说法太绝对，与事实不符。这个词语体现了说明文语言的准确性、严谨性。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================
+         第四单元考点：明贬实褒（2题）
+         ====================================== -->
+    <div class="exercise-block" id="unit4">
+      <div class="exercise-title">
+        考点四：明贬实褒写作手法赏析
+        <span class="point-tag">共2题 · 本册重点</span>
+      </div>
+
+      <div class="reading-text">
+        <strong>我家的"坏"狗狗</strong><br><br>
+        我家那只金毛可真是个十足的"坏家伙"。每天我一开门，它就兴奋地扑过来，爪子上沾的泥印子能把我刚换的干净衣服蹭得一团糟，可真气人！它还特别贪吃，一闻到肉香就围着桌子打转，眼珠子直勾勾地盯着你的碗，那模样好像在说："快给我一口！快给我一口！"要是不理它，它就把尾巴摇得像风扇一样，偶尔还会发出可怜的呜咽声，让人不忍心不给它吃。有时候它还会把我的拖鞋叼走藏起来，让我找半天。哎，这只调皮捣蛋的小狗啊，真是让人又爱又恨！
+      </div>
+
+      <!-- 第9题 -->
+      <div class="question-item">
+        <div class="question-num">第9题</div>
+        <p>作者说"我家那只金毛可真是个十足的'坏家伙'"，你觉得作者是真的讨厌这只狗吗？为什么？请结合短文内容说说你的看法。</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 标准答案</div>
+            <p>作者<strong>并不是真的讨厌</strong>这只狗。<br>
+            这里运用了<strong>明贬实褒</strong>的写作手法。表面上作者说金毛是"坏家伙""调皮捣蛋"，列举了它蹭脏衣服、贪吃、叼拖鞋等"坏事"，但实际上字里行间藏着作者对狗狗的<strong>喜爱之情</strong>，生动地写出了这只金毛活泼可爱、调皮亲人的特点，言语间流露出亲昵的感情。结尾的"真是让人又爱又恨"也点明了作者的喜爱之情。</p>
+          </div>
+          <div class="answer-tips">
+            💡 <strong>答题5步法：</strong>①表态→②点明明贬实褒→③分析表层贬义→④分析深层褒义→⑤点明情感
+          </div>
+        </div>
+      </div>
+
+      <!-- 第10题 -->
+      <div class="question-item">
+        <div class="question-num">第10题</div>
+        <p>请你也运用明贬实褒的手法写一句话，表达对某种小动物的喜爱之情。</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="试着写一写..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 示例参考</div>
+            <p>示例1：我们家的小猫可真是个"小霸王"，每天在家里上蹿下跳，把花瓶都打碎了，却还会蹭着你的腿撒娇，让人舍不得骂它。</p>
+            <p>示例2：我的小仓鼠真是个"小气鬼"，把腮帮子塞得满满的也不肯分给别人一粒瓜子，那贪吃的样子实在太可爱了。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================
+         第六单元考点1：环境描写作用（2题）
+         ====================================== -->
+    <div class="exercise-block" id="unit6">
+      <div class="exercise-title">
+        考点五：环境描写的作用分析
+        <span class="point-tag">共2题 · 重点题型</span>
+      </div>
+
+      <div class="reading-text">
+        <strong>雨中的温暖</strong><br><br>
+        ①天阴沉沉的，不一会儿就下起了瓢泼大雨。狂风呼呼地刮着，把路边的小树吹得东倒西歪。我站在学校门口，望着越下越大的雨，心里着急得不行：早上出门太急，忘记带伞了，爸爸妈妈今天都要加班，谁来接我呢？<br><br>
+        ②就在这时，一把雨伞举到了我的头顶。我回头一看，原来是班主任李老师。她笑着对我说："走，我送你回家。"一路上，李老师把伞都往我这边倾斜，她自己的半边肩膀都淋湿了。雨还在下着，但我的心里暖暖的。
+      </div>
+
+      <!-- 第11题 -->
+      <div class="question-item">
+        <div class="question-num">第11题</div>
+        <p>短文第①自然段画横线的句子是环境描写，它在文中起什么作用？</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 标准答案</div>
+            <p>这句话是环境描写，<br>
+            ①交代了故事发生的<strong>天气背景</strong>——下着大雨；<br>
+            ②渲染了<strong>糟糕、令人焦急</strong>的气氛；<br>
+            ③为下文<strong>李老师送"我"回家</strong>的情节做了铺垫；<br>
+            ④用恶劣的天气<strong>衬托出李老师关心学生的美好品质</strong>。</p>
+          </div>
+          <div class="answer-tips">
+            💡 <strong>4大作用思考方向：</strong>交代背景→渲染气氛→推动情节/做铺垫→衬托人物。答出2-3点就可以拿满分！
+          </div>
+        </div>
+      </div>
+
+      <!-- 第12题 -->
+      <div class="question-item">
+        <div class="question-num">第12题</div>
+        <p>"雨还在下着，但我的心里暖暖的。"这里写雨还在下，和前面的环境描写有什么关系？这样写有什么好处？</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 标准答案</div>
+            <p>这里写雨还在下，与开头的环境描写形成了<strong>首尾呼应</strong>。外面的雨还是一样大，但"我"的心情变了，从开始的焦急变成了现在的温暖。用外界寒冷的雨天与"我"内心的温暖形成<strong>对比</strong>，更加突出了李老师的关爱给"我"带来的温暖，深化了文章的主题，赞美了老师对学生的关爱。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================
+         第六单元考点2：内容概括（2题）
+         ====================================== -->
+    <div class="exercise-block" id="unit6-2">
+      <div class="exercise-title">
+        考点六：把握文章主要内容
+        <span class="point-tag">共2题</span>
+      </div>
+
+      <div class="reading-text">
+        <strong>司马光</strong><br><br>
+        古时候有个孩子叫司马光。有一天，他和几个小朋友在花园里玩。花园里有座假山，假山下面有一口大水缸，缸里装满了水。<br><br>
+        有个小朋友爬到假山上去玩，一不小心，掉进了大水缸。别的小朋友都慌了，有的吓哭了，有的叫着喊着跑去找大人。<br><br>
+        司马光没有慌，他举起一块大石头，使劲砸那口缸，几下子就把缸砸破了。缸里的水流了出来，掉在缸里的小朋友得救了。
+      </div>
+
+      <!-- 第13题 -->
+      <div class="question-item">
+        <div class="question-num">第13题</div>
+        <p>请用简洁的语言概括这个故事的主要内容。（提示：谁+什么时候+什么地方+做了什么+结果怎么样）</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 标准答案</div>
+            <p><strong>古时候</strong>，<strong>司马光</strong>和小朋友们在<strong>花园里</strong>玩，一个小朋友<strong>不小心掉进水缸里</strong>，其他小朋友都慌了，司马光<strong>用石头砸破水缸救出了小朋友</strong>。</p>
+          </div>
+          <div class="answer-tips">
+            💡 <strong>概括4要素：</strong>时间+人物+起因（发生了什么）+经过（怎么做的）+结果（最后怎么样），简单说清楚就行，不要太啰嗦。
+          </div>
+        </div>
+      </div>
+
+      <!-- 第14题 -->
+      <div class="question-item">
+        <div class="question-num">第14题</div>
+        <p>如果给这个故事的三个部分分别加小标题，你会怎么加？（每个小标题不超过8个字）</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="第一部分：&#10;第二部分：&#10;第三部分："></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 参考小标题</div>
+            <p>第一部分：<strong>花园玩耍</strong>（或：游戏时落水）</p>
+            <p>第二部分：<strong>同伴落水</strong>（或：伙伴们惊慌）</p>
+            <p>第三部分：<strong>砸缸救人</strong>（或：司马光智救）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================
+         第七单元考点：人物品质分析（4题）
+         ====================================== -->
+    <div class="exercise-block" id="unit7">
+      <div class="exercise-title">
+        考点七：从人物言行中体会人物品质
+        <span class="point-tag">共4题 · 本册重点</span>
+      </div>
+
+      <div class="reading-text">
+        <strong>手术台就是阵地（节选）</strong><br><br>
+        1939年春，齐会战斗打响了。气焰嚣张的日军刚到齐会镇就挨了当头一棒，被我军消灭了五百多人。<br><br>
+        敌人不断反扑，战斗非常激烈。我军的伤员陆续从火线上抬下来。在离火线不远的一座小庙里，白求恩大夫正在给伤员做手术。他已经两天两夜没休息了，眼球上布满了血丝。突然，几发炮弹落在小庙前的空地上。硝烟滚滚，弹片纷飞，小庙被烟雾淹没了。白求恩仍然镇定地站在手术台旁。他接过助手递过来的镊子，敏捷地从伤员的腹腔里取出一块弹片，扔在盘子里。
+      </div>
+
+      <!-- 第15题 -->
+      <div class="question-item">
+        <div class="question-num">第15题</div>
+        <p>从"他已经两天两夜没休息了，眼球上布满了血丝"这句话中，你体会到白求恩大夫怎样的品质？</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 标准答案</div>
+            <p>我体会到白求恩大夫<strong>不怕疲劳、坚守岗位、尽职尽责</strong>的高尚品质。他为了救治伤员，已经两天两夜没休息了，说明他把伤员的生命看得比自己的休息更重要，体现了他对工作极端负责、无私奉献的精神。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第16题 -->
+      <div class="question-item">
+        <div class="question-num">第16题</div>
+        <p>炮弹落在小庙周围，白求恩仍然镇定地给伤员做手术。从他的表现中，你感受到他是一个怎样的人？</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 标准答案</div>
+            <p>在炮弹落在身边、情况十分危险的情况下，白求恩仍然镇定地做手术，我感受到他是一个<strong>临危不惧、沉着冷静、不怕牺牲</strong>的人。他把伤员的安危看得比自己的生命还重要，体现了他<strong>坚守岗位、无私奉献、对工作极度负责</strong>的高尚品质和伟大的国际主义精神。</p>
+          </div>
+          <div class="answer-tips">
+            💡 <strong>常用品质词：</strong>尽职尽责、临危不惧、舍己为人、不怕牺牲、无私奉献
+          </div>
+        </div>
+      </div>
+
+      <div class="reading-text" style="margin-top: 30px;">
+        <strong>少年英雄王二小（节选）</strong><br><br>
+        抗日战争时期，王二小的家乡是八路军抗日根据地，经常受到日本鬼子的"扫荡"。王二小是儿童团员，他常常一边在山坡上放牛，一边给八路军放哨。<br><br>
+        1942年10月25日，日本鬼子又来"扫荡"，走到山口时迷了路。敌人看见王二小在山坡上放牛，就叫他带路。王二小装着听话的样子走在前面，为了保护转移的乡亲，他把敌人带进了八路军的埋伏圈。突然，四面八方响起了枪声，敌人知道上了当，就气急败坏地用刺刀挑死了王二小。<br><br>
+        机智勇敢的王二小，就这样被日本侵略者残忍地杀害了，牺牲时年仅13岁。
+      </div>
+
+      <!-- 第17题 -->
+      <div class="question-item">
+        <div class="question-num">第17题</div>
+        <p>王二小为什么要装着听话的样子给敌人带路？从中可以看出他是一个怎样的孩子？</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 标准答案</div>
+            <p>王二小装着听话的样子给敌人带路，是为了<strong>把敌人带进八路军的埋伏圈，保护转移的乡亲们</strong>。从中可以看出王二小是一个<strong>机智勇敢、热爱祖国、不怕牺牲、舍己为人</strong>的孩子。他为了保护乡亲们，不惜牺牲自己的生命，是一位了不起的少年英雄。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第18题 -->
+      <div class="question-item">
+        <div class="question-num">第18题</div>
+        <p>文中用了"机智勇敢"来形容王二小，请你再用3-5个词语形容他，并选择其中一个结合短文内容说明理由。</p>
+        <div class="answer-area">
+          <textarea class="answer-input" placeholder="在这里写下你的答案..."></textarea>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">
+            <div class="answer-title">✅ 参考答案</div>
+            <p><strong>可以用的词语：</strong>热爱祖国、不怕牺牲、舍己救人、临危不惧、聪明机智、英勇无畏等。</p>
+            <p><strong>示例回答：</strong>我觉得王二小还是个<span class="highlight">舍己为人</span>的孩子。理由是：他明知道把敌人带进埋伏圈后，敌人发现上当了一定会杀了他，但他为了保护乡亲们的安全，还是毅然选择这样做，最后献出了自己年轻的生命。这种为了他人不惜牺牲自己的精神就是舍己为人。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 完成提示 -->
+    <div style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-top: 30px;">
+      <h2 style="margin-bottom: 15px;">🎉 恭喜你完成全部18道练习题！</h2>
+      <p style="font-size: 16px; opacity: 0.95;">
+        认真对照答案批改，把做错的题目整理到错题本上哦！<br>
+        掌握了这些阅读考点，考试就不怕啦！💪
+      </p>
+    </div>
+
+    <!-- 按钮组 -->
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="showAllAnswers()">显示全部答案</button>
+      <button class="btn btn-warning" onclick="hideAllAnswers()">隐藏全部答案</button>
+      <button class="btn btn-success" onclick="window.print()">打印练习</button>
+      <button class="btn btn-primary" onclick="location.reload()">重新开始</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 小学语文阅读理解专项练习题库 | 持续更新中</p>
+  </div>
+
+  <script>
+    function showAllAnswers() {
+      document.querySelectorAll('.answer-section').forEach(section => {
+        section.classList.add('show');
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function hideAllAnswers() {
+      document.querySelectorAll('.answer-section').forEach(section => {
+        section.classList.remove('show');
+      });
+    }
+    
+    // 平滑滚动
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
