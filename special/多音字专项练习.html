@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>四年级下册 - 多音字专项练习 | 小学语文题库</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .question-block {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .question-number {
+      font-weight: 600;
+      color: #4F46E5;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    .question-text {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    .pinyin-group {
+      background: #EEF2FF;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 15px;
+      color: #4338CA;
+      font-weight: 500;
+    }
+    .option-group {
+      display: flex;
+      gap: 20px;
+      margin: 10px 0;
+      flex-wrap: wrap;
+    }
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 2px solid #E5E7EB;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .option-item:hover {
+      border-color: #A5B4FC;
+      background: #EEF2FF;
+    }
+    .option-item.selected {
+      border-color: #4F46E5;
+      background: #EEF2FF;
+    }
+    .option-item.correct {
+      border-color: #059669;
+      background: #D1FAE5;
+      color: #065F46;
+    }
+    .option-item.wrong {
+      border-color: #DC2626;
+      background: #FEE2E2;
+      color: #991B1B;
+    }
+    .option-item input {
+      margin: 0;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    .blank {
+      display: inline-block;
+      min-width: 50px;
+      text-align: center;
+      border-bottom: 2px dashed #9CA3AF;
+      padding: 0 5px;
+      margin: 0 3px;
+      font-weight: 600;
+      color: #4F46E5;
+      transition: all 0.2s;
+    }
+    .blank.filled-correct {
+      border-bottom-color: #059669;
+      color: #059669;
+      background: #D1FAE5;
+    }
+    .blank.filled-wrong {
+      border-bottom-color: #DC2626;
+      color: #DC2626;
+      background: #FEE2E2;
+    }
+    .answer-section {
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid #E5E7EB;
+      display: none;
+    }
+    .answer-section.show {
+      display: block;
+    }
+    .correct-answer {
+      color: #059669;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .analysis {
+      background: #FEF3C7;
+      padding: 12px 15px;
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #92400E;
+    }
+    .score-box {
+      background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+      margin-bottom: 30px;
+      display: none;
+    }
+    .score-box.show {
+      display: block;
+    }
+    .score-number {
+      font-size: 48px;
+      font-weight: 700;
+      margin: 10px 0;
+    }
+    .score-text {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: #4F46E5;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #4338CA;
+    }
+    .btn-success {
+      background: #059669;
+      color: white;
+    }
+    .btn-success:hover {
+      background: #047857;
+    }
+    .btn-warning {
+      background: #D97706;
+      color: white;
+    }
+    .btn-warning:hover {
+      background: #B45309;
+    }
+    .tips-box {
+      background: #EFF6FF;
+      border-left: 4px solid #3B82F6;
+      padding: 15px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 25px;
+    }
+    .tips-title {
+      font-weight: 600;
+      color: #1E40AF;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    .tips-content {
+      color: #1E3A8A;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .sub-question {
+      margin: 12px 0;
+      padding-left: 15px;
+      border-left: 3px solid #E5E7EB;
+    }
+    @media print {
+      .btn-group, .score-box {
+        display: none !important;
+      }
+      .answer-section {
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📚 四年级下册 · 多音字专项练习</h1>
+    <p>统编版教材同步 | 识字表高频多音字 | 附答案解析+答题技巧</p>
+  </div>
+
+  <div class="container">
+    <div class="tips-box">
+      <div class="tips-title">💡 多音字答题技巧</div>
+      <div class="tips-content">
+        <strong>1. 根据词义定音：</strong>不同的读音对应不同的意思，先理解词语或句子的意思，再确定读音。<br>
+        <strong>2. 根据词性定音：</strong>同一个字作动词和作名词时读音可能不同（如"好"hǎo形容词/hào动词）。<br>
+        <strong>3. 根据语境定音：</strong>把字放到具体的词语或句子中读一下，哪个读音更通顺、更符合语言习惯。<br>
+        <strong>4. 记少不记多：</strong>记住特殊情况下的读音，其他情况下读常用音。
+      </div>
+    </div>
+
+    <div class="score-box" id="scoreBox">
+      <div style="font-size: 20px;">本次练习得分</div>
+      <div class="score-number" id="scoreNumber">0</div>
+      <div class="score-text" id="scoreText">继续加油！</div>
+    </div>
+
+    <div id="questionsContainer">
+      <!-- 题目1 -->
+      <div class="question-block" data-qid="1">
+        <div class="question-number">第1题</div>
+        <div class="pinyin-group">卜：bo &nbsp;&nbsp; bǔ</div>
+        <div class="question-text">
+          （1）他在田边拔萝<span class="blank" data-blank="1-1"></span>。<br>
+          （2）古人用占<span class="blank" data-blank="1-2"></span>来预测吉凶。
+        </div>
+        <div class="sub-question">
+          <div>（1）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="1-1" data-value="bo">
+              <input type="radio" name="q1-1" value="bo"> bo
+            </label>
+            <label class="option-item" data-question="1-1" data-value="bǔ">
+              <input type="radio" name="q1-1" value="bǔ"> bǔ
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（2）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="1-2" data-value="bo">
+              <input type="radio" name="q1-2" value="bo"> bo
+            </label>
+            <label class="option-item" data-question="1-2" data-value="bǔ">
+              <input type="radio" name="q1-2" value="bǔ"> bǔ
+            </label>
+          </div>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">✅ 正确答案：（1）bo；（2）bǔ</div>
+          <div class="analysis">
+            <strong>📝 解析：</strong><br>
+            "卜"读<strong>bo</strong>时，用于"萝卜"一词；<br>
+            读<strong>bǔ</strong>时，表示占卜、预料，如：占卜、卜卦、未卜先知。
+          </div>
+        </div>
+      </div>
+
+      <!-- 题目2 -->
+      <div class="question-block" data-qid="2">
+        <div class="question-number">第2题</div>
+        <div class="pinyin-group">和：hé &nbsp;&nbsp; hè &nbsp;&nbsp; huó &nbsp;&nbsp; huò</div>
+        <div class="question-text">
+          （1）不论什么时候，眼前都是一片<span class="blank" data-blank="2-1"></span>谐的风景画。<br>
+          （2）清风徐来，百鸟唱<span class="blank" data-blank="2-2"></span>，格外好听。<br>
+          （3）姥姥决定中午包饺子，她立马开始<span class="blank" data-blank="2-3"></span>面。<br>
+          （4）不要把不同的颜料胡乱<span class="blank" data-blank="2-4"></span>弄，颜色会变得杂乱难看。
+        </div>
+        <div class="sub-question">
+          <div>（1）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="2-1" data-value="hé">
+              <input type="radio" name="q2-1" value="hé"> hé
+            </label>
+            <label class="option-item" data-question="2-1" data-value="hè">
+              <input type="radio" name="q2-1" value="hè"> hè
+            </label>
+            <label class="option-item" data-question="2-1" data-value="huó">
+              <input type="radio" name="q2-1" value="huó"> huó
+            </label>
+            <label class="option-item" data-question="2-1" data-value="huò">
+              <input type="radio" name="q2-1" value="huò"> huò
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（2）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="2-2" data-value="hé">
+              <input type="radio" name="q2-2" value="hé"> hé
+            </label>
+            <label class="option-item" data-question="2-2" data-value="hè">
+              <input type="radio" name="q2-2" value="hè"> hè
+            </label>
+            <label class="option-item" data-question="2-2" data-value="huó">
+              <input type="radio" name="q2-2" value="huó"> huó
+            </label>
+            <label class="option-item" data-question="2-2" data-value="huò">
+              <input type="radio" name="q2-2" value="huò"> huò
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（3）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="2-3" data-value="hé">
+              <input type="radio" name="q2-3" value="hé"> hé
+            </label>
+            <label class="option-item" data-question="2-3" data-value="hè">
+              <input type="radio" name="q2-3" value="hè"> hè
+            </label>
+            <label class="option-item" data-question="2-3" data-value="huó">
+              <input type="radio" name="q2-3" value="huó"> huó
+            </label>
+            <label class="option-item" data-question="2-3" data-value="huò">
+              <input type="radio" name="q2-3" value="huò"> huò
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（4）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="2-4" data-value="hé">
+              <input type="radio" name="q2-4" value="hé"> hé
+            </label>
+            <label class="option-item" data-question="2-4" data-value="hè">
+              <input type="radio" name="q2-4" value="hè"> hè
+            </label>
+            <label class="option-item" data-question="2-4" data-value="huó">
+              <input type="radio" name="q2-4" value="huó"> huó
+            </label>
+            <label class="option-item" data-question="2-4" data-value="huò">
+              <input type="radio" name="q2-4" value="huò"> huò
+            </label>
+          </div>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">✅ 正确答案：（1）hé；（2）hè；（3）huó；（4）huò</div>
+          <div class="analysis">
+            <strong>📝 解析：</strong><br>
+            "和"读<strong>hé</strong>时，表示平和、和谐、和睦，如：和谐、和平；<br>
+            读<strong>hè</strong>时，表示附和、跟着唱，如：唱和、随声附和；<br>
+            读<strong>huó</strong>时，表示在粉状物中加水搅拌，如：和面、和泥；<br>
+            读<strong>huò</strong>时，表示混合、掺杂，如：和弄、和药。
+          </div>
+        </div>
+      </div>
+
+      <!-- 题目3 -->
+      <div class="question-block" data-qid="3">
+        <div class="question-number">第3题</div>
+        <div class="pinyin-group">扎：zhā &nbsp;&nbsp; zā &nbsp;&nbsp; zhá</div>
+        <div class="question-text">
+          （1）妹妹把头发<span class="blank" data-blank="3-1"></span>成了一个小辫。<br>
+          （2）雨来在水里挣<span class="blank" data-blank="3-2"></span>，奋力躲闪。<br>
+          （3）护士正在给伤员包扎<span class="blank" data-blank="3-3"></span>伤口。
+        </div>
+        <div class="sub-question">
+          <div>（1）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="3-1" data-value="zhā">
+              <input type="radio" name="q3-1" value="zhā"> zhā
+            </label>
+            <label class="option-item" data-question="3-1" data-value="zā">
+              <input type="radio" name="q3-1" value="zā"> zā
+            </label>
+            <label class="option-item" data-question="3-1" data-value="zhá">
+              <input type="radio" name="q3-1" value="zhá"> zhá
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（2）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="3-2" data-value="zhā">
+              <input type="radio" name="q3-2" value="zhā"> zhā
+            </label>
+            <label class="option-item" data-question="3-2" data-value="zā">
+              <input type="radio" name="q3-2" value="zā"> zā
+            </label>
+            <label class="option-item" data-question="3-2" data-value="zhá">
+              <input type="radio" name="q3-2" value="zhá"> zhá
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（3）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="3-3" data-value="zhā">
+              <input type="radio" name="q3-3" value="zhā"> zhā
+            </label>
+            <label class="option-item" data-question="3-3" data-value="zā">
+              <input type="radio" name="q3-3" value="zā"> zā
+            </label>
+            <label class="option-item" data-question="3-3" data-value="zhá">
+              <input type="radio" name="q3-3" value="zhá"> zhá
+            </label>
+          </div>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">✅ 正确答案：（1）zā；（2）zhá；（3）zā</div>
+          <div class="analysis">
+            <strong>📝 解析：</strong><br>
+            "扎"读<strong>zā</strong>时，表示捆、缠束，如：扎辫子、包扎、扎彩；<br>
+            读<strong>zhá</strong>时，用于"挣扎"一词，表示用力支撑或摆脱；<br>
+            读<strong>zhā</strong>时，表示刺、钻，如：扎针、扎营、扎堆。
+          </div>
+        </div>
+      </div>
+
+      <!-- 题目4 -->
+      <div class="question-block" data-qid="4">
+        <div class="question-number">第4题</div>
+        <div class="pinyin-group">率：shuài &nbsp;&nbsp; lǜ</div>
+        <div class="question-text">
+          （1）母鸡<span class="blank" data-blank="4-1"></span>领一群小鸡，在竹林中觅食。<br>
+          （2）这次活动参与<span class="blank" data-blank="4-2"></span>很高。
+        </div>
+        <div class="sub-question">
+          <div>（1）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="4-1" data-value="shuài">
+              <input type="radio" name="q4-1" value="shuài"> shuài
+            </label>
+            <label class="option-item" data-question="4-1" data-value="lǜ">
+              <input type="radio" name="q4-1" value="lǜ"> lǜ
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（2）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="4-2" data-value="shuài">
+              <input type="radio" name="q4-2" value="shuài"> shuài
+            </label>
+            <label class="option-item" data-question="4-2" data-value="lǜ">
+              <input type="radio" name="q4-2" value="lǜ"> lǜ
+            </label>
+          </div>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">✅ 正确答案：（1）shuài；（2）lǜ</div>
+          <div class="analysis">
+            <strong>📝 解析：</strong><br>
+            "率"读<strong>shuài</strong>时，表示带领、统领，如：率领、统率、率领；也表示爽直，如：直率、坦率；<br>
+            读<strong>lǜ</strong>时，表示比值、比率，如：效率、出勤率、增长率。
+          </div>
+        </div>
+      </div>
+
+      <!-- 题目5 -->
+      <div class="question-block" data-qid="5">
+        <div class="question-number">第5题</div>
+        <div class="pinyin-group">着：zhe &nbsp;&nbsp; zháo &nbsp;&nbsp; zhuó</div>
+        <div class="question-text">
+          （1）我们看<span class="blank" data-blank="5-1"></span>日出，心里很激动。<br>
+          （2）干草<span class="blank" data-blank="5-2"></span>火了，大家赶紧救火。
+        </div>
+        <div class="sub-question">
+          <div>（1）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="5-1" data-value="zhe">
+              <input type="radio" name="q5-1" value="zhe"> zhe
+            </label>
+            <label class="option-item" data-question="5-1" data-value="zháo">
+              <input type="radio" name="q5-1" value="zháo"> zháo
+            </label>
+            <label class="option-item" data-question="5-1" data-value="zhuó">
+              <input type="radio" name="q5-1" value="zhuó"> zhuó
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（2）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="5-2" data-value="zhe">
+              <input type="radio" name="q5-2" value="zhe"> zhe
+            </label>
+            <label class="option-item" data-question="5-2" data-value="zháo">
+              <input type="radio" name="q5-2" value="zháo"> zháo
+            </label>
+            <label class="option-item" data-question="5-2" data-value="zhuó">
+              <input type="radio" name="q5-2" value="zhuó"> zhuó
+            </label>
+          </div>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">✅ 正确答案：（1）zhe；（2）zháo</div>
+          <div class="analysis">
+            <strong>📝 解析：</strong><br>
+            "着"读<strong>zhe</strong>时，作助词，表示动作正在进行，如：看着、走着、吃着；<br>
+            读<strong>zháo</strong>时，表示燃烧、入睡、感受到，如：着火、着急、着凉；<br>
+            读<strong>zhuó</strong>时，表示穿、接触，如：穿着、着陆、着手。
+          </div>
+        </div>
+      </div>
+
+      <!-- 题目6 -->
+      <div class="question-block" data-qid="6">
+        <div class="question-number">第6题</div>
+        <div class="pinyin-group">屏：píng &nbsp;&nbsp; bǐng</div>
+        <div class="question-text">
+          （1）房间里立着一道精致的风<span class="blank" data-blank="6-1"></span>。<br>
+          （2）猫<span class="blank" data-blank="6-2"></span>息凝视，静静等待猎物出现。
+        </div>
+        <div class="sub-question">
+          <div>（1）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="6-1" data-value="píng">
+              <input type="radio" name="q6-1" value="píng"> píng
+            </label>
+            <label class="option-item" data-question="6-1" data-value="bǐng">
+              <input type="radio" name="q6-1" value="bǐng"> bǐng
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（2）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="6-2" data-value="píng">
+              <input type="radio" name="q6-2" value="píng"> píng
+            </label>
+            <label class="option-item" data-question="6-2" data-value="bǐng">
+              <input type="radio" name="q6-2" value="bǐng"> bǐng
+            </label>
+          </div>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">✅ 正确答案：（1）píng；（2）bǐng</div>
+          <div class="analysis">
+            <strong>📝 解析：</strong><br>
+            "屏"读<strong>píng</strong>时，表示遮挡用的东西或屏幕，如：屏风、屏幕、屏障；<br>
+            读<strong>bǐng</strong>时，表示抑制、排除，如：屏息、屏气、屏退。
+          </div>
+        </div>
+      </div>
+
+      <!-- 题目7 -->
+      <div class="question-block" data-qid="7">
+        <div class="question-number">第7题</div>
+        <div class="pinyin-group">恶：è &nbsp;&nbsp; wù &nbsp;&nbsp; ě</div>
+        <div class="question-text">
+          （1）敌人模样凶<span class="blank" data-blank="7-1"></span>，令人畏惧。<br>
+          （2）我们<span class="blank" data-blank="7-2"></span>恶说谎的行为。
+        </div>
+        <div class="sub-question">
+          <div>（1）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="7-1" data-value="è">
+              <input type="radio" name="q7-1" value="è"> è
+            </label>
+            <label class="option-item" data-question="7-1" data-value="wù">
+              <input type="radio" name="q7-1" value="wù"> wù
+            </label>
+            <label class="option-item" data-question="7-1" data-value="ě">
+              <input type="radio" name="q7-1" value="ě"> ě
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（2）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="7-2" data-value="è">
+              <input type="radio" name="q7-2" value="è"> è
+            </label>
+            <label class="option-item" data-question="7-2" data-value="wù">
+              <input type="radio" name="q7-2" value="wù"> wù
+            </label>
+            <label class="option-item" data-question="7-2" data-value="ě">
+              <input type="radio" name="q7-2" value="ě"> ě
+            </label>
+          </div>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">✅ 正确答案：（1）è；（2）wù</div>
+          <div class="analysis">
+            <strong>📝 解析：</strong><br>
+            "恶"读<strong>è</strong>时，表示凶狠、坏，如：凶恶、恶毒、邪恶；<br>
+            读<strong>wù</strong>时，表示讨厌、憎恨，如：厌恶、可恶、深恶痛绝；<br>
+            读<strong>ě</strong>时，表示要呕吐的感觉，如：恶心。
+          </div>
+        </div>
+      </div>
+
+      <!-- 题目8 -->
+      <div class="question-block" data-qid="8">
+        <div class="question-number">第8题</div>
+        <div class="pinyin-group">调：tiáo &nbsp;&nbsp; diào</div>
+        <div class="question-text">
+          （1）老师<span class="blank" data-blank="8-1"></span>整了教室里的座位。<br>
+          （2）爸爸被<span class="blank" data-blank="8-2"></span>到外地工作。
+        </div>
+        <div class="sub-question">
+          <div>（1）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="8-1" data-value="tiáo">
+              <input type="radio" name="q8-1" value="tiáo"> tiáo
+            </label>
+            <label class="option-item" data-question="8-1" data-value="diào">
+              <input type="radio" name="q8-1" value="diào"> diào
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（2）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="8-2" data-value="tiáo">
+              <input type="radio" name="q8-2" value="tiáo"> tiáo
+            </label>
+            <label class="option-item" data-question="8-2" data-value="diào">
+              <input type="radio" name="q8-2" value="diào"> diào
+            </label>
+          </div>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">✅ 正确答案：（1）tiáo；（2）diào</div>
+          <div class="analysis">
+            <strong>📝 解析：</strong><br>
+            "调"读<strong>tiáo</strong>时，表示调整、使配合得当，如：调整、调节、调味；<br>
+            读<strong>diào</strong>时，表示调动、派遣、曲调，如：调动、调走、声调。
+          </div>
+        </div>
+      </div>
+
+      <!-- 题目9 -->
+      <div class="question-block" data-qid="9">
+        <div class="question-number">第9题</div>
+        <div class="pinyin-group">看：kān &nbsp;&nbsp; kàn</div>
+        <div class="question-text">
+          （1）鹅老爷<span class="blank" data-blank="9-1"></span>守着饭罐，不让狗偷吃。<br>
+          （2）同学们认真<span class="blank" data-blank="9-2"></span>书，专心学习。
+        </div>
+        <div class="sub-question">
+          <div>（1）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="9-1" data-value="kān">
+              <input type="radio" name="q9-1" value="kān"> kān
+            </label>
+            <label class="option-item" data-question="9-1" data-value="kàn">
+              <input type="radio" name="q9-1" value="kàn"> kàn
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（2）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="9-2" data-value="kān">
+              <input type="radio" name="q9-2" value="kān"> kān
+            </label>
+            <label class="option-item" data-question="9-2" data-value="kàn">
+              <input type="radio" name="q9-2" value="kàn"> kàn
+            </label>
+          </div>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">✅ 正确答案：（1）kān；（2）kàn</div>
+          <div class="analysis">
+            <strong>📝 解析：</strong><br>
+            "看"读<strong>kān</strong>时，表示守护、监视，如：看守、看门、看护；<br>
+            读<strong>kàn</strong>时，表示使视线接触人或物，如：看书、观看、看见。
+          </div>
+        </div>
+      </div>
+
+      <!-- 题目10 -->
+      <div class="question-block" data-qid="10">
+        <div class="question-number">第10题</div>
+        <div class="pinyin-group">荷：hé &nbsp;&nbsp; hè</div>
+        <div class="question-text">
+          （1）池塘里<span class="blank" data-blank="10-1"></span>花盛开，清香阵阵。<br>
+          （2）太阳好像负着重<span class="blank" data-blank="10-2"></span>似的，慢慢上升。
+        </div>
+        <div class="sub-question">
+          <div>（1）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="10-1" data-value="hé">
+              <input type="radio" name="q10-1" value="hé"> hé
+            </label>
+            <label class="option-item" data-question="10-1" data-value="hè">
+              <input type="radio" name="q10-1" value="hè"> hè
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（2）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="10-2" data-value="hé">
+              <input type="radio" name="q10-2" value="hé"> hé
+            </label>
+            <label class="option-item" data-question="10-2" data-value="hè">
+              <input type="radio" name="q10-2" value="hè"> hè
+            </label>
+          </div>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">✅ 正确答案：（1）hé；（2）hè</div>
+          <div class="analysis">
+            <strong>📝 解析：</strong><br>
+            "荷"读<strong>hé</strong>时，表示植物名，如：荷花、荷叶、荷塘；<br>
+            读<strong>hè</strong>时，表示背、扛、负担，如：重荷、负荷、荷枪实弹。
+          </div>
+        </div>
+      </div>
+
+      <!-- 题目11 -->
+      <div class="question-block" data-qid="11">
+        <div class="question-number">第11题</div>
+        <div class="pinyin-group">刹：shā &nbsp;&nbsp; chà</div>
+        <div class="question-text">
+          （1）司机紧急<span class="blank" data-blank="11-1"></span>车，避免了危险。<br>
+          （2）一<span class="blank" data-blank="11-2"></span>那，太阳跳出了海面。
+        </div>
+        <div class="sub-question">
+          <div>（1）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="11-1" data-value="shā">
+              <input type="radio" name="q11-1" value="shā"> shā
+            </label>
+            <label class="option-item" data-question="11-1" data-value="chà">
+              <input type="radio" name="q11-1" value="chà"> chà
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（2）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="11-2" data-value="shā">
+              <input type="radio" name="q11-2" value="shā"> shā
+            </label>
+            <label class="option-item" data-question="11-2" data-value="chà">
+              <input type="radio" name="q11-2" value="chà"> chà
+            </label>
+          </div>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">✅ 正确答案：（1）shā；（2）chà</div>
+          <div class="analysis">
+            <strong>📝 解析：</strong><br>
+            "刹"读<strong>shā</strong>时，表示止住，如：刹车、刹住；<br>
+            读<strong>chà</strong>时，表示极短的时间或佛教的寺庙，如：刹那、古刹。
+          </div>
+        </div>
+      </div>
+
+      <!-- 题目12 -->
+      <div class="question-block" data-qid="12">
+        <div class="question-number">第12题</div>
+        <div class="pinyin-group">吧：bā &nbsp;&nbsp; ba</div>
+        <div class="question-text">
+          （1）爸爸<span class="blank" data-blank="12-1"></span>嗒<span class="blank" data-blank="12-2"></span>嗒地抽着烟。<br>
+          （2）我们一起出发走<span class="blank" data-blank="12-3"></span>！
+        </div>
+        <div class="sub-question">
+          <div>（1）第一个空选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="12-1" data-value="bā">
+              <input type="radio" name="q12-1" value="bā"> bā
+            </label>
+            <label class="option-item" data-question="12-1" data-value="ba">
+              <input type="radio" name="q12-1" value="ba"> ba
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（2）第二个空选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="12-2" data-value="bā">
+              <input type="radio" name="q12-2" value="bā"> bā
+            </label>
+            <label class="option-item" data-question="12-2" data-value="ba">
+              <input type="radio" name="q12-2" value="ba"> ba
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（3）第三个空选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="12-3" data-value="bā">
+              <input type="radio" name="q12-3" value="bā"> bā
+            </label>
+            <label class="option-item" data-question="12-3" data-value="ba">
+              <input type="radio" name="q12-3" value="ba"> ba
+            </label>
+          </div>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">✅ 正确答案：（1）bā；（2）bā；（3）ba</div>
+          <div class="analysis">
+            <strong>📝 解析：</strong><br>
+            "吧"读<strong>bā</strong>时，用于拟声词，如：吧嗒、吧唧；<br>
+            读<strong>ba</strong>时，作语气助词，用在句末，表示商量、请求、命令等语气。
+          </div>
+        </div>
+      </div>
+
+      <!-- 题目13 -->
+      <div class="question-block" data-qid="13">
+        <div class="question-number">第13题</div>
+        <div class="pinyin-group">塞：sāi &nbsp;&nbsp; sè &nbsp;&nbsp; sài</div>
+        <div class="question-text">
+          （1）雨来把书<span class="blank" data-blank="13-1"></span>在怀里就往外跑。<br>
+          （2）心情烦闷，心里堵<span class="blank" data-blank="13-2"></span>得慌。
+        </div>
+        <div class="sub-question">
+          <div>（1）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="13-1" data-value="sāi">
+              <input type="radio" name="q13-1" value="sāi"> sāi
+            </label>
+            <label class="option-item" data-question="13-1" data-value="sè">
+              <input type="radio" name="q13-1" value="sè"> sè
+            </label>
+            <label class="option-item" data-question="13-1" data-value="sài">
+              <input type="radio" name="q13-1" value="sài"> sài
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（2）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="13-2" data-value="sāi">
+              <input type="radio" name="q13-2" value="sāi"> sāi
+            </label>
+            <label class="option-item" data-question="13-2" data-value="sè">
+              <input type="radio" name="q13-2" value="sè"> sè
+            </label>
+            <label class="option-item" data-question="13-2" data-value="sài">
+              <input type="radio" name="q13-2" value="sài"> sài
+            </label>
+          </div>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">✅ 正确答案：（1）sāi；（2）sè</div>
+          <div class="analysis">
+            <strong>📝 解析：</strong><br>
+            "塞"读<strong>sāi</strong>时，表示把东西放进有空隙的地方，如：塞住、塞进、瓶塞；<br>
+            读<strong>sè</strong>时，表示堵塞、不通畅，用于书面语，如：闭塞、堵塞、梗塞；<br>
+            读<strong>sài</strong>时，表示边界上的险要地方，如：边塞、塞外、要塞。
+          </div>
+        </div>
+      </div>
+
+      <!-- 题目14 -->
+      <div class="question-block" data-qid="14">
+        <div class="question-number">第14题</div>
+        <div class="pinyin-group">单：dān &nbsp;&nbsp; chán</div>
+        <div class="question-text">
+          （1）我<span class="blank" data-blank="14-1"></span>独走在乡间小路上。<br>
+          （2）<span class="blank" data-blank="14-2"></span>于是古代北方部族首领的称号。
+        </div>
+        <div class="sub-question">
+          <div>（1）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="14-1" data-value="dān">
+              <input type="radio" name="q14-1" value="dān"> dān
+            </label>
+            <label class="option-item" data-question="14-1" data-value="chán">
+              <input type="radio" name="q14-1" value="chán"> chán
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（2）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="14-2" data-value="dān">
+              <input type="radio" name="q14-2" value="dān"> dān
+            </label>
+            <label class="option-item" data-question="14-2" data-value="chán">
+              <input type="radio" name="q14-2" value="chán"> chán
+            </label>
+          </div>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">✅ 正确答案：（1）dān；（2）chán</div>
+          <div class="analysis">
+            <strong>📝 解析：</strong><br>
+            "单"读<strong>dān</strong>时，表示一个、单独，如：单独、单一、孤单；<br>
+            读<strong>chán</strong>时，用于"单于"一词，是古代匈奴君主的称号。
+          </div>
+        </div>
+      </div>
+
+      <!-- 题目15 -->
+      <div class="question-block" data-qid="15">
+        <div class="question-number">第15题</div>
+        <div class="pinyin-group">晕：yūn &nbsp;&nbsp; yùn</div>
+        <div class="question-text">
+          （1）一顿殴打过后，雨来头<span class="blank" data-blank="15-1"></span>眼花。<br>
+          （2）不少人坐车久了容易<span class="blank" data-blank="15-2"></span>车。
+        </div>
+        <div class="sub-question">
+          <div>（1）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="15-1" data-value="yūn">
+              <input type="radio" name="q15-1" value="yūn"> yūn
+            </label>
+            <label class="option-item" data-question="15-1" data-value="yùn">
+              <input type="radio" name="q15-1" value="yùn"> yùn
+            </label>
+          </div>
+        </div>
+        <div class="sub-question">
+          <div>（2）选择：</div>
+          <div class="option-group">
+            <label class="option-item" data-question="15-2" data-value="yūn">
+              <input type="radio" name="q15-2" value="yūn"> yūn
+            </label>
+            <label class="option-item" data-question="15-2" data-value="yùn">
+              <input type="radio" name="q15-2" value="yùn"> yùn
+            </label>
+          </div>
+        </div>
+        <div class="answer-section">
+          <div class="correct-answer">✅ 正确答案：（1）yūn；（2）yùn</div>
+          <div class="analysis">
+            <strong>📝 解析：</strong><br>
+            "晕"读<strong>yūn</strong>时，表示昏迷、头脑不清，如：头晕、晕倒、晕头转向；<br>
+            读<strong>yùn</strong>时，表示头发昏、周围物体好像在旋转，如：晕车、晕船、日晕。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="submitAnswers()">提交答案</button>
+      <button class="btn btn-success" onclick="showAllAnswers()">查看全部答案</button>
+      <button class="btn btn-warning" onclick="resetAnswers()">重新开始</button>
+      <button class="btn btn-primary" onclick="window.print()">打印练习</button>
+    </div>
+
+    <div style="background: #F3F4F6; padding: 20px; border-radius: 12px; margin-top: 30px;">
+      <h3 style="color: #374151; margin-bottom: 15px;">📚 多音字学习方法总结</h3>
+      <div style="line-height: 1.8; color: #4B5563;">
+        <p><strong>1. 组词记忆法：</strong>把多音字的不同读音分别组一个常用词，记住这个词就记住了读音。如："和"hé（和平）、hè（唱和）、huó（和面）。</p>
+        <p><strong>2. 词义记忆法：</strong>根据不同的意思来记读音。如："恶"表示"凶狠"读è，表示"讨厌"读wù。</p>
+        <p><strong>3. 语境记忆法：</strong>造一个包含所有读音的句子。如："扎（zā）辫子的小女孩在水里挣扎（zhá），不小心被扎（zhā）到了。"</p>
+        <p><strong>4. 勤查字典：</strong>遇到不确定的读音，及时查字典确认，养成好习惯。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 小学语文阅读理解专项练习题库 | 持续更新中</p>
+  </div>
+
+  <script>
+    // 正确答案配置
+    const correctAnswers = {
+      '1-1': 'bo', '1-2': 'bǔ',
+      '2-1': 'hé', '2-2': 'hè', '2-3': 'huó', '2-4': 'huò',
+      '3-1': 'zā', '3-2': 'zhá', '3-3': 'zā',
+      '4-1': 'shuài', '4-2': 'lǜ',
+      '5-1': 'zhe', '5-2': 'zháo',
+      '6-1': 'píng', '6-2': 'bǐng',
+      '7-1': 'è', '7-2': 'wù',
+      '8-1': 'tiáo', '8-2': 'diào',
+      '9-1': 'kān', '9-2': 'kàn',
+      '10-1': 'hé', '10-2': 'hè',
+      '11-1': 'shā', '11-2': 'chà',
+      '12-1': 'bā', '12-2': 'bā', '12-3': 'ba',
+      '13-1': 'sāi', '13-2': 'sè',
+      '14-1': 'dān', '14-2': 'chán',
+      '15-1': 'yūn', '15-2': 'yùn'
+    };
+
+    // 选项点击事件
+    document.querySelectorAll('.option-item').forEach(item => {
+      item.addEventListener('click', function() {
+        const question = this.dataset.question;
+        const value = this.dataset.value;
+        
+        // 移除同组其他选项的选中状态
+        document.querySelectorAll(`.option-item[data-question="${question}"]`).forEach(opt => {
+          opt.classList.remove('selected');
+        });
+        
+        // 添加当前选项选中状态
+        this.classList.add('selected');
+        
+        // 填充到空格
+        const blank = document.querySelector(`.blank[data-blank="${question}"]`);
+        if (blank) {
+          blank.textContent = value;
+        }
+      });
+    });
+
+    // 提交答案
+    function submitAnswers() {
+      let correctCount = 0;
+      let totalCount = Object.keys(correctAnswers).length;
+      let answeredCount = 0;
+
+      // 检查每道题
+      for (const [question, correctValue] of Object.entries(correctAnswers)) {
+        const selectedOption = document.querySelector(`.option-item[data-question="${question}"].selected`);
+        const blank = document.querySelector(`.blank[data-blank="${question}"]`);
+        
+        if (selectedOption) {
+          answeredCount++;
+          const userValue = selectedOption.dataset.value;
+          
+          if (userValue === correctValue) {
+            selectedOption.classList.add('correct');
+            if (blank) blank.classList.add('filled-correct');
+            correctCount++;
+          } else {
+            selectedOption.classList.add('wrong');
+            if (blank) blank.classList.add('filled-wrong');
+            // 显示正确答案
+            const correctOption = document.querySelector(`.option-item[data-question="${question}"][data-value="${correctValue}"]`);
+            if (correctOption) correctOption.classList.add('correct');
+          }
+        }
+      }
+
+      // 显示所有答案解析
+      document.querySelectorAll('.answer-section').forEach(section => {
+        section.classList.add('show');
+      });
+
+      // 计算分数（满分100分）
+      const score = Math.round((correctCount / totalCount) * 100);
+      
+      // 显示分数
+      document.getElementById('scoreNumber').textContent = score + '分';
+      
+      let scoreText = '';
+      if (score >= 90) {
+        scoreText = '🎉 太棒了！多音字掌握得非常好！继续保持！';
+      } else if (score >= 80) {
+        scoreText = '👍 很不错！大部分多音字都掌握了，个别再巩固一下！';
+      } else if (score >= 60) {
+        scoreText = '💪 继续加油！把做错的题目认真看一下解析，多练习！';
+      } else {
+        scoreText = '📚 多音字需要多加练习哦！认真看解析，多读多记！';
+      }
+      document.getElementById('scoreText').textContent = scoreText;
+      document.getElementById('scoreBox').classList.add('show');
+
+      // 滚动到分数区域
+      document.getElementById('scoreBox').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // 查看全部答案
+    function showAllAnswers() {
+      // 自动选中正确答案
+      for (const [question, correctValue] of Object.entries(correctAnswers)) {
+        const correctOption = document.querySelector(`.option-item[data-question="${question}"][data-value="${correctValue}"]`);
+        if (correctOption) {
+          // 移除同组其他选项的选中状态
+          document.querySelectorAll(`.option-item[data-question="${question}"]`).forEach(opt => {
+            opt.classList.remove('selected', 'wrong');
+          });
+          correctOption.classList.add('selected', 'correct');
+          
+          // 填充到空格
+          const blank = document.querySelector(`.blank[data-blank="${question}"]`);
+          if (blank) {
+            blank.textContent = correctValue;
+            blank.classList.remove('filled-wrong');
+            blank.classList.add('filled-correct');
+          }
+        }
+      }
+
+      // 显示所有答案解析
+      document.querySelectorAll('.answer-section').forEach(section => {
+        section.classList.add('show');
+      });
+    }
+
+    // 重置答案
+    function resetAnswers() {
+      // 清除所有选项状态
+      document.querySelectorAll('.option-item').forEach(item => {
+        item.classList.remove('selected', 'correct', 'wrong');
+        const input = item.querySelector('input');
+        if (input) input.checked = false;
+      });
+
+      // 清除空格内容和样式
+      document.querySelectorAll('.blank').forEach(blank => {
+        blank.textContent = '';
+        blank.classList.remove('filled-correct', 'filled-wrong');
+      });
+
+      // 隐藏答案解析和分数
+      document.querySelectorAll('.answer-section').forEach(section => {
+        section.classList.remove('show');
+      });
+      document.getElementById('scoreBox').classList.remove('show');
+
+      // 滚动到顶部
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
