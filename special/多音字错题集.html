@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>多音字错题集 - 四年级下册</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    :root {
+      --ink: #1F2937;
+      --red: #DC2626;
+      --green: #059669;
+      --orange: #D97706;
+    }
+
+    body {
+      background: linear-gradient(180deg, #FEF2F2 0%, #ffffff 100%);
+    }
+
+    .error-header {
+      background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 30px 24px;
+      margin-bottom: 20px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(220, 38, 38, 0.2);
+    }
+
+    .error-header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .error-header p {
+      font-size: 15px;
+      opacity: .9;
+    }
+
+    .stat-bar {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      background: rgba(255,255,255,.15);
+      border-radius: 12px;
+      padding: 12px 20px;
+      text-align: center;
+      min-width: 100px;
+    }
+
+    .stat-item .num {
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .stat-item .label {
+      font-size: 13px;
+      opacity: .85;
+    }
+
+    .empty-box {
+      background: #fff;
+      border-radius: 16px;
+      padding: 60px 30px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,.05);
+    }
+
+    .empty-box .emoji {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    .empty-box h3 {
+      color: var(--ink);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .empty-box p {
+      color: #6B7280;
+      font-size: 15px;
+    }
+
+    .wrong-card {
+      background: #fff;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 16px rgba(220, 38, 38, 0.08);
+      border: 1px solid #FECACA;
+      overflow: hidden;
+    }
+
+    .wrong-card-head {
+      background: #FEF2F2;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #FECACA;
+      flex-wrap: wrap;
+    }
+
+    .wrong-card-head .wrong-idx {
+      background: #DC2626;
+      color: #fff;
+      font-size: 13px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .wrong-card-head .wrong-q {
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .wrong-card-head .wrong-pinyin {
+      color: #6B7280;
+      font-size: 14px;
+    }
+
+    .wrong-card-body {
+      padding: 16px 18px;
+    }
+
+    .wrong-sentence {
+      background: #FAFBFC;
+      border: 1px solid #E5E7EB;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .wrong-blank {
+      display: inline-block;
+      min-width: 36px;
+      text-align: center;
+      border-bottom: 2px dashed #DC2626;
+      padding: 0 6px;
+      margin: 0 2px;
+      font-weight: 600;
+      color: #DC2626;
+      background: #FEE2E2;
+    }
+
+    .compare-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .compare-item {
+      flex: 1;
+      min-width: 160px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .compare-item.your {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      color: #991B1B;
+    }
+
+    .compare-item.correct {
+      background: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      color: #065F46;
+    }
+
+    .compare-item .label {
+      font-size: 13px;
+      opacity: .7;
+      margin-bottom: 4px;
+    }
+
+    .compare-item .value {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .wrong-analysis {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .wrong-analysis strong {
+      color: #92400E;
+    }
+
+    .action-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin: 24px 0;
+      flex-wrap: wrap;
+    }
+
+    .btn-danger {
+      background: #DC2626;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-danger:hover { background: #B91C1C; }
+
+    .btn-outline {
+      background: #fff;
+      border: 2px solid #DC2626;
+      color: #DC2626;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+    .btn-outline:hover { background: #FEF2F2; }
+
+    .btn-secondary {
+      background: #4F46E5;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: #4338CA; }
+
+    .practice-mode-bar {
+      background: #EEF2FF;
+      border: 1px solid #C7D2FE;
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .practice-mode-bar .mode-label {
+      font-weight: 600;
+      color: #4338CA;
+    }
+
+    .toggle-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    .toggle-label input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    @media print {
+      .action-group, .practice-mode-bar, .stat-bar a {
+        display: none !important;
+      }
+      .wrong-card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">🖨️ 打印错题集</button>
+
+  <div class="error-header">
+    <h1>📕 多音字错题集</h1>
+    <p>自动收集你做错的多音字题目，可反复练习直到全部消灭</p>
+    <div class="stat-bar">
+      <div class="stat-item">
+        <div class="num" id="totalCount">0</div>
+        <div class="label">错题总数</div>
+      </div>
+      <div class="stat-item">
+        <div class="num" id="mostWrongQ">-</div>
+        <div class="label">最高错次</div>
+      </div>
+      <div class="stat-item">
+        <a href="多音字专项练习.html" style="color:#fff;text-decoration:underline;">← 返回练习</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="practice-mode-bar">
+    <span class="mode-label">💡 练习模式</span>
+    <label class="toggle-label">
+      <input type="checkbox" id="hideAnswerToggle">
+      先隐藏答案，自己回忆作答
+    </label>
+  </div>
+
+  <div id="wrongList"></div>
+  <div id="emptyState" style="display:none;">
+    <div class="empty-box">
+      <div class="emoji">🎉</div>
+      <h3>暂无错题记录</h3>
+      <p>你已消灭全部错题！去多音字专项练习再挑战一下吧。</p>
+      <div style="margin-top: 20px;">
+        <a href="多音字专项练习.html" class="btn-secondary" style="display:inline-block;text-decoration:none;">去练习 →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="action-group">
+    <button class="btn-secondary" onclick="window.open('多音字专项练习.html','_blank')">📖 返回练习</button>
+    <button class="btn-danger" onclick="clearWrongBook()">🗑️ 清空错题集</button>
+  </div>
+
+  <script>
+    const WRONG_BOOK_KEY = 'yuwen_duoyinzi_wrong_book_v1';
+
+    function loadWrongBook() {
+      try {
+        return JSON.parse(localStorage.getItem(WRONG_BOOK_KEY) || '{}');
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function saveWrongBook(book) {
+      localStorage.setItem(WRONG_BOOK_KEY, JSON.stringify(book));
+      render();
+    }
+
+    function clearWrongBook() {
+      if (!confirm('确定要清空所有错题记录吗？')) return;
+      saveWrongBook({});
+    }
+
+    function removeWrongItem(blankId) {
+      const book = loadWrongBook();
+      delete book[blankId];
+      saveWrongBook(book);
+    }
+
+    function render() {
+      const book = loadWrongBook();
+      const items = Object.values(book);
+      const list = document.getElementById('wrongList');
+      const empty = document.getElementById('emptyState');
+
+      document.getElementById('totalCount').textContent = items.length;
+
+      let maxCount = 0;
+      items.forEach(i => { if (i.wrongCount > maxCount) maxCount = i.wrongCount; });
+      document.getElementById('mostWrongQ').textContent = items.length === 0 ? '-' : (maxCount > 1 ? `错${maxCount}次` : '1次');
+
+      if (items.length === 0) {
+        list.innerHTML = '';
+        empty.style.display = 'block';
+        return;
+      }
+      empty.style.display = 'none';
+
+      const hideAnswer = document.getElementById('hideAnswerToggle').checked;
+
+      items.sort((a, b) => {
+        // 优先显示错次多的
+        if (b.wrongCount !== a.wrongCount) return b.wrongCount - a.wrongCount;
+        return a.id.localeCompare(b.id);
+      });
+
+      list.innerHTML = items.map((item, idx) => {
+        // 使用主练习页保存的题干展示文本；练习模式下先遮住正确答案
+        const sentenceHTML = escapeHTML(item.displayText || item.questionText || '').replace(
+          /【你的答案：([^；]+)；正确：([^】]+)】/g,
+          hideAnswer
+            ? '<span class="wrong-blank">你的答案：$1；正确：____</span>'
+            : '<span class="wrong-blank">你的答案：$1；正确：$2</span>'
+        );
+
+        const analysisHTML = item.analysis || '';
+        const showHide = hideAnswer ? 'style="display:none;"' : '';
+        const correctValueHTML = hideAnswer ? '____' : (item.correctValue || '');
+
+        return `
+<div class="wrong-card" data-id="${item.id}">
+  <div class="wrong-card-head">
+    <span class="wrong-idx">${idx + 1}</span>
+    <span class="wrong-q">${item.number || '第' + item.qid + '题'}</span>
+    <span class="wrong-pinyin">${item.subLabel || ''} · ${item.pinyin || ''}</span>
+    <span style="margin-left:auto;font-size:13px;color:#DC2626;font-weight:500;">
+      ❌ 错 ${item.wrongCount || 1} 次
+    </span>
+  </div>
+  <div class="wrong-card-body">
+    <div class="wrong-sentence">${sentenceHTML}</div>
+
+    <div class="compare-row">
+      <div class="compare-item your">
+        <div class="label">你的答案</div>
+        <div class="value" style="text-decoration:line-through;">${item.lastWrongValue || '未选'}</div>
+      </div>
+      <div class="compare-item correct">
+        <div class="label">正确答案</div>
+        <div class="value">${correctValueHTML}</div>
+      </div>
+    </div>
+
+    <div class="wrong-analysis" ${showHide}>
+      ${analysisHTML}
+    </div>
+
+    <div style="margin-top: 12px; text-align: right;">
+      <button class="btn-outline" style="padding:5px 14px;font-size:13px;border-width:1px;" onclick="removeWrongItem('${item.id}')">✓ 已掌握，移出错题集</button>
+    </div>
+  </div>
+</div>`;
+      }).join('');
+    }
+
+    function escapeHTML(text) {
+      return String(text).replace(/[&<>"]/g, char => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;'
+      }[char]));
+    }
+
+    // Toggle hide answers
+    document.getElementById('hideAnswerToggle').addEventListener('change', render);
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>

@@ -199,6 +199,48 @@
       padding-left: 15px;
       border-left: 3px solid #E5E7EB;
     }
+
+    /* 错题集相关样式 */
+    .wrong-notice {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      border-radius: 10px;
+      padding: 12px 18px;
+      margin-bottom: 15px;
+      display: none;
+    }
+    .wrong-notice.show { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .wrong-notice .badge {
+      background: #DC2626;
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .wrong-notice a {
+      color: #DC2626;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    .btn-danger {
+      background: #DC2626;
+      color: white;
+    }
+    .btn-danger:hover { background: #B91C1C; }
+    .btn-outline {
+      background: #fff;
+      border: 2px solid #DC2626;
+      color: #DC2626;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+    .btn-outline:hover { background: #FEF2F2; }
+
     @media print {
       .btn-group, .score-box {
         display: none !important;
@@ -230,6 +272,12 @@
       <div style="font-size: 20px;">本次练习得分</div>
       <div class="score-number" id="scoreNumber">0</div>
       <div class="score-text" id="scoreText">继续加油！</div>
+    </div>
+
+    <div class="wrong-notice" id="wrongNotice">
+      <span class="badge" id="wrongBadge">0道错题</span>
+      <span id="wrongNoticeText">错题已自动加入错题集。</span>
+      <a href="多音字错题集.html">进入错题集专项练习 →</a>
     </div>
 
     <div id="questionsContainer">
@@ -942,6 +990,7 @@
       <button class="btn btn-primary" onclick="submitAnswers()">提交答案</button>
       <button class="btn btn-success" onclick="showAllAnswers()">查看全部答案</button>
       <button class="btn btn-warning" onclick="resetAnswers()">重新开始</button>
+      <button class="btn btn-danger" onclick="window.open('多音字错题集.html','_blank')">📕 错题集</button>
       <button class="btn btn-primary" onclick="window.print()">打印练习</button>
     </div>
 
@@ -980,6 +1029,104 @@
       '15-1': 'yūn', '15-2': 'yùn'
     };
 
+    const WRONG_BOOK_KEY = 'yuwen_duoyinzi_wrong_book_v1';
+
+    function loadWrongBook() {
+      try {
+        return JSON.parse(localStorage.getItem(WRONG_BOOK_KEY) || '{}');
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function saveWrongBook(book) {
+      localStorage.setItem(WRONG_BOOK_KEY, JSON.stringify(book));
+      updateWrongNotice();
+    }
+
+    function getQuestionContext(questionId, userValue = '') {
+      const block = document.querySelector(`.option-item[data-question="${questionId}"]`)?.closest('.question-block');
+      if (!block) return null;
+      const qid = block.dataset.qid;
+      const number = block.querySelector('.question-number')?.textContent.trim() || `第${qid}题`;
+      const pinyin = block.querySelector('.pinyin-group')?.textContent.trim() || '';
+      const questionText = block.querySelector('.question-text')?.innerText.trim() || '';
+      const displayText = buildQuestionDisplayText(block, questionId, userValue, correctAnswers[questionId]);
+      const subQuestion = document.querySelector(`.option-item[data-question="${questionId}"]`)?.closest('.sub-question');
+      const subLabel = subQuestion?.querySelector('div')?.textContent.trim() || '';
+      const options = Array.from(document.querySelectorAll(`.option-item[data-question="${questionId}"]`)).map(opt => opt.dataset.value);
+      const analysis = block.querySelector('.analysis')?.innerHTML || '';
+      const correctAnswerSummary = block.querySelector('.correct-answer')?.innerText.trim() || '';
+      return {
+        id: questionId,
+        qid,
+        number,
+        pinyin,
+        questionText,
+        displayText,
+        subLabel,
+        options,
+        correctValue: correctAnswers[questionId],
+        correctAnswerSummary,
+        analysis
+      };
+    }
+
+    function buildQuestionDisplayText(block, focusQuestionId, userValue, correctValue) {
+      const clone = block.querySelector('.question-text')?.cloneNode(true);
+      if (!clone) return '';
+      clone.querySelectorAll('.blank').forEach(blank => {
+        const blankId = blank.dataset.blank;
+        if (blankId === focusQuestionId) {
+          blank.textContent = `【你的答案：${userValue}；正确：${correctValue}】`;
+        } else {
+          blank.textContent = '____';
+        }
+      });
+      return clone.innerText.trim();
+    }
+
+    function addWrongQuestion(questionId, userValue) {
+      const context = getQuestionContext(questionId, userValue);
+      if (!context) return;
+      const book = loadWrongBook();
+      const previous = book[questionId] || {};
+      book[questionId] = {
+        ...context,
+        lastWrongValue: userValue,
+        wrongCount: (previous.wrongCount || 0) + 1,
+        lastWrongAt: new Date().toISOString()
+      };
+      saveWrongBook(book);
+    }
+
+    function removeCorrectedWrongQuestion(questionId) {
+      const book = loadWrongBook();
+      if (book[questionId]) {
+        delete book[questionId];
+        saveWrongBook(book);
+      }
+    }
+
+    function updateWrongNotice(addedCount = null) {
+      const book = loadWrongBook();
+      const count = Object.keys(book).length;
+      const notice = document.getElementById('wrongNotice');
+      const badge = document.getElementById('wrongBadge');
+      const text = document.getElementById('wrongNoticeText');
+      if (!notice || !badge || !text) return;
+
+      badge.textContent = `${count}道错题`;
+      if (count > 0) {
+        notice.classList.add('show');
+        text.textContent = addedCount === null
+          ? '错题集中已有记录，可进入专项练习。'
+          : `本次新增/更新 ${addedCount} 道错题，已自动保存到本机错题集。`;
+      } else {
+        notice.classList.remove('show');
+      }
+    }
+
     // 选项点击事件
     document.querySelectorAll('.option-item').forEach(item => {
       item.addEventListener('click', function() {
@@ -989,10 +1136,14 @@
         // 移除同组其他选项的选中状态
         document.querySelectorAll(`.option-item[data-question="${question}"]`).forEach(opt => {
           opt.classList.remove('selected');
+          const input = opt.querySelector('input');
+          if (input) input.checked = false;
         });
         
         // 添加当前选项选中状态
         this.classList.add('selected');
+        const input = this.querySelector('input');
+        if (input) input.checked = true;
         
         // 填充到空格
         const blank = document.querySelector(`.blank[data-blank="${question}"]`);
@@ -1007,6 +1158,15 @@
       let correctCount = 0;
       let totalCount = Object.keys(correctAnswers).length;
       let answeredCount = 0;
+      let wrongAddedCount = 0;
+
+      // 清理上一次批改样式，避免重复提交时样式叠加
+      document.querySelectorAll('.option-item').forEach(item => {
+        item.classList.remove('correct', 'wrong');
+      });
+      document.querySelectorAll('.blank').forEach(blank => {
+        blank.classList.remove('filled-correct', 'filled-wrong');
+      });
 
       // 检查每道题
       for (const [question, correctValue] of Object.entries(correctAnswers)) {
@@ -1021,9 +1181,13 @@
             selectedOption.classList.add('correct');
             if (blank) blank.classList.add('filled-correct');
             correctCount++;
+            // 已经在错题集里的题，如果这次答对，就自动移出错题集
+            removeCorrectedWrongQuestion(question);
           } else {
             selectedOption.classList.add('wrong');
             if (blank) blank.classList.add('filled-wrong');
+            addWrongQuestion(question, userValue);
+            wrongAddedCount++;
             // 显示正确答案
             const correctOption = document.querySelector(`.option-item[data-question="${question}"][data-value="${correctValue}"]`);
             if (correctOption) correctOption.classList.add('correct');
@@ -1043,17 +1207,20 @@
       document.getElementById('scoreNumber').textContent = score + '分';
       
       let scoreText = '';
-      if (score >= 90) {
+      if (answeredCount < totalCount) {
+        scoreText = `你已完成 ${answeredCount}/${totalCount} 个空。未作答的题不会加入错题集，建议补全后再提交一次。`;
+      } else if (score >= 90) {
         scoreText = '🎉 太棒了！多音字掌握得非常好！继续保持！';
       } else if (score >= 80) {
         scoreText = '👍 很不错！大部分多音字都掌握了，个别再巩固一下！';
       } else if (score >= 60) {
-        scoreText = '💪 继续加油！把做错的题目认真看一下解析，多练习！';
+        scoreText = '💪 继续加油！做错的题目已加入错题集，后面可以专项练习！';
       } else {
-        scoreText = '📚 多音字需要多加练习哦！认真看解析，多读多记！';
+        scoreText = '📚 多音字需要多加练习哦！错题已保存，建议进入错题集逐个突破！';
       }
       document.getElementById('scoreText').textContent = scoreText;
       document.getElementById('scoreBox').classList.add('show');
+      updateWrongNotice(wrongAddedCount);
 
       // 滚动到分数区域
       document.getElementById('scoreBox').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1068,8 +1235,12 @@
           // 移除同组其他选项的选中状态
           document.querySelectorAll(`.option-item[data-question="${question}"]`).forEach(opt => {
             opt.classList.remove('selected', 'wrong');
+            const input = opt.querySelector('input');
+            if (input) input.checked = false;
           });
           correctOption.classList.add('selected', 'correct');
+          const input = correctOption.querySelector('input');
+          if (input) input.checked = true;
           
           // 填充到空格
           const blank = document.querySelector(`.blank[data-blank="${question}"]`);
@@ -1107,10 +1278,13 @@
         section.classList.remove('show');
       });
       document.getElementById('scoreBox').classList.remove('show');
+      updateWrongNotice();
 
       // 滚动到顶部
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    updateWrongNotice();
   </script>
 </body>
 </html>
