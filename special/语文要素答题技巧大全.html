@@ -3,668 +3,530 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>四年级下册 - 语文要素答题技巧大全 | 小学语文题库</title>
+  <title>四年级下册 - 语文要素答题技巧大全</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    .unit-block {
-      background: #fff;
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 25px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    :root {
+      --ink: #233042;
+      --muted: #607085;
+      --green: #2E7D32;
+      --blue: #1565C0;
+      --orange: #EF6C00;
+      --paper: #fffdf5;
+      --soft-green: #E8F5E9;
+      --soft-blue: #E3F2FD;
+      --soft-orange: #FFF3E0;
+      --line: #d8e2dc;
     }
-    .unit-title {
-      font-weight: 700;
-      font-size: 20px;
-      color: #4F46E5;
-      margin-bottom: 15px;
-      padding-bottom: 10px;
-      border-bottom: 3px solid #EEF2FF;
+
+    body {
+      background: linear-gradient(180deg, #fbfff8 0%, #f5fbff 48%, #fffaf2 100%);
+      color: var(--ink);
     }
-    .unit-focus {
-      background: #FEF3C7;
-      padding: 12px 18px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      font-weight: 500;
-      color: #92400E;
-      line-height: 1.6;
-    }
-    .section-title {
-      font-size: 17px;
-      font-weight: 600;
-      color: #1F2937;
-      margin: 20px 0 12px;
-      padding-left: 12px;
-      border-left: 4px solid #4F46E5;
-    }
-    .question-type {
-      background: #F9FAFB;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 12px;
-      border-left: 3px solid #6366F1;
-    }
-    .question-title {
-      font-weight: 600;
-      color: #374151;
-      margin-bottom: 8px;
-    }
-    .template-box {
-      background: #EFF6FF;
-      border: 2px dashed #3B82F6;
-      padding: 15px;
-      border-radius: 8px;
-      margin: 12px 0;
-      font-family: '楷体', 'KaiTi', serif;
-      line-height: 1.8;
-    }
-    .template-title {
-      color: #1E40AF;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .highlight {
-      background: linear-gradient(180deg, transparent 60%, #FDE68A 60%);
-      padding: 0 4px;
-      font-weight: 500;
-    }
-    .keyword-tag {
-      display: inline-block;
-      background: #E0E7FF;
-      color: #3730A3;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 13px;
-      margin: 3px;
-    }
-    .five-steps {
-      background: #ECFDF5;
-      border-left: 4px solid #059669;
-      padding: 15px 20px;
-      border-radius: 0 8px 8px 0;
-      margin: 12px 0;
-    }
-    .step-item {
-      margin: 8px 0;
-      padding-left: 25px;
+
+    .guide-hero {
       position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #2E7D32 0%, #1565C0 72%);
+      color: #fff;
+      border-radius: 18px;
+      padding: 34px 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 35px rgba(21, 101, 192, 0.18);
     }
-    .step-item::before {
-      content: attr(data-step);
+
+    .guide-hero::after {
+      content: "语文要素";
       position: absolute;
-      left: 0;
-      width: 18px;
-      height: 18px;
-      background: #059669;
-      color: white;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 12px;
-      line-height: 18px;
-      font-weight: 600;
+      right: -8px;
+      bottom: -28px;
+      font-size: 76px;
+      font-weight: 900;
+      opacity: .11;
+      letter-spacing: 6px;
     }
-    .example-box {
-      background: #FFFBEB;
-      border: 1px solid #FCD34D;
-      padding: 15px;
-      border-radius: 8px;
-      margin: 12px 0;
+
+    .guide-hero h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: #fff;
     }
-    .example-title {
-      color: #92400E;
-      font-weight: 600;
-      margin-bottom: 8px;
+
+    .guide-hero p {
+      max-width: 760px;
+      font-size: 16px;
+      color: rgba(255,255,255,.92);
     }
-    .quality-list {
-      columns: 2;
-      gap: 15px;
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 16px 0 24px;
     }
-    .quality-category {
-      break-inside: avoid;
-      margin-bottom: 15px;
+
+    .chip {
+      display: inline-block;
+      border: 1px solid rgba(46, 125, 50, .22);
+      background: #fff;
+      color: var(--green);
+      padding: 7px 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
     }
-    .quality-category h4 {
-      color: #059669;
-      margin-bottom: 8px;
+
+    .notice-box {
+      background: #fff;
+      border-left: 5px solid var(--orange);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 22px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    }
+
+    .notice-box strong { color: var(--orange); }
+
+    .unit-card {
+      background: rgba(255,255,255,.96);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      margin: 24px 0;
+      box-shadow: 0 8px 24px rgba(35, 48, 66, .07);
+      overflow: hidden;
+    }
+
+    .unit-head {
+      padding: 20px 22px;
+      background: linear-gradient(90deg, #F1F8E9 0%, #E3F2FD 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .unit-head h2 {
+      margin: 0 0 8px;
+      color: var(--green);
+      font-size: 23px;
+    }
+
+    .unit-meta {
+      color: var(--muted);
       font-size: 15px;
     }
-    .quality-item {
-      padding: 4px 0;
-      padding-left: 15px;
-      position: relative;
+
+    .unit-body { padding: 20px 22px 24px; }
+
+    .focus-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
     }
-    .quality-item::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: #10B981;
-      font-weight: bold;
-    }
-    .nav-menu {
-      background: #fff;
+
+    .mini-card {
+      background: #FAFFFA;
+      border: 1px solid #dceedd;
       border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 25px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 10px;
-      z-index: 100;
+      padding: 13px 14px;
     }
-    .nav-title {
-      font-weight: 600;
-      color: #374151;
-      margin-bottom: 12px;
+
+    .mini-card b { color: var(--blue); }
+
+    .qa-block {
+      border-top: 1px dashed #cbd8ce;
+      padding-top: 18px;
+      margin-top: 18px;
     }
-    .nav-links {
+
+    .qa-block h3 {
+      color: var(--blue);
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .ask-line, .template-line, .example-line, .answer-line {
+      margin: 9px 0;
+      padding: 10px 12px;
+      border-radius: 9px;
+    }
+
+    .ask-line { background: var(--soft-blue); }
+    .template-line { background: var(--soft-green); }
+    .example-line { background: #fff; border: 1px solid #e8eadf; }
+    .answer-line { background: var(--soft-orange); }
+
+    .tag {
+      display: inline-block;
+      font-size: 13px;
+      color: #fff;
+      background: var(--blue);
+      padding: 2px 7px;
+      border-radius: 5px;
+      margin-right: 6px;
+    }
+
+    .tag.orange { background: var(--orange); }
+    .tag.green { background: var(--green); }
+
+    .step-list {
+      margin-left: 22px;
+      margin-top: 8px;
+    }
+
+    .step-list li { margin: 5px 0; }
+
+    .word-bank {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      margin-top: 10px;
     }
-    .nav-link {
-      padding: 6px 12px;
-      background: #EEF2FF;
-      color: #4338CA;
-      border-radius: 6px;
-      text-decoration: none;
+
+    .word-bank span {
+      background: #F5F7FA;
+      border: 1px solid #dde4ec;
+      border-radius: 8px;
+      padding: 5px 9px;
       font-size: 14px;
-      transition: all 0.2s;
     }
-    .nav-link:hover {
-      background: #4F46E5;
-      color: white;
-    }
-    .tips-box {
-      background: #FEF2F2;
-      border-left: 4px solid #EF4444;
-      padding: 15px 20px;
-      border-radius: 0 8px 8px 0;
-      margin-bottom: 20px;
-    }
-    .tips-title {
-      color: #991B1B;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
+
+    .print-btn.secondary { top: 70px; background: #1565C0; }
+
     @media print {
-      .nav-menu {
-        position: static;
-      }
+      .toolbar, .print-btn { display: none !important; }
+      .unit-card { break-inside: avoid; box-shadow: none; }
+      body { background: #fff; }
     }
   </style>
 </head>
 <body>
-  <div class="header">
+  <button class="print-btn" onclick="window.print()">🖨️ 打印技巧页</button>
+  <button class="print-btn secondary" onclick="location.href='../index.html'">🏠 返回首页</button>
+
+  <section class="guide-hero">
     <h1>📚 四年级下册 · 语文要素答题技巧大全</h1>
-    <p>统编版教材同步 | 1-8单元核心考点 | 标准答题模板 | 考试必备</p>
+    <p>按统编版四年级下册 8 个单元整理：核心语文要素、高频题型、答题模板、同步例句与完整作答示范。适合平时阅读训练、单元复习和考前打印背诵。</p>
+  </section>
+
+  <nav class="toolbar" aria-label="单元导航">
+    <a class="chip" href="#unit1">第一单元：体会情感</a>
+    <a class="chip" href="#unit2">第二单元：提问与说明文</a>
+    <a class="chip" href="#unit3">第三单元：现代诗</a>
+    <a class="chip" href="#unit4">第四单元：明贬实褒</a>
+    <a class="chip" href="#unit5">第五单元：游览顺序</a>
+    <a class="chip" href="#unit6">第六单元：长文章</a>
+    <a class="chip" href="#unit7">第七单元：人物品质</a>
+    <a class="chip" href="#unit8">第八单元：童话形象</a>
+  </nav>
+
+  <div class="notice-box">
+    <strong>使用方法：</strong>先看“题型识别”，再背“答题模板”，最后仿照“同步例句/示范答案”练习。阅读题不要空谈，一定要回到原文，用“原文依据 + 自己概括”的方式作答。
   </div>
 
-  <div class="container">
-    <div class="tips-box">
-      <div class="tips-title">⭐ 使用说明</div>
-      <div style="color: #991B1B; line-height: 1.7;">
-        <strong>本册4个重点单元（重中之重）：</strong>第二单元（说明文）、第四单元（明贬实褒）、第六单元（长文章）、第七单元（人物品质）<br>
-        建议打印出来，做阅读练习时对照着套用答题模板，熟能生巧！
+  <section class="unit-card" id="unit1">
+    <div class="unit-head">
+      <h2>第一单元：抓住关键语句，初步体会课文表达的思想感情</h2>
+      <p class="unit-meta">重点课文：《乡下人家》《天窗》《三月桃花水》｜核心能力：找关键句、品关键词、体会乡村生活之美。</p>
+    </div>
+    <div class="unit-body">
+      <div class="focus-row">
+        <div class="mini-card"><b>常见情感：</b>喜爱、赞美、向往、怀念、陶醉。</div>
+        <div class="mini-card"><b>常找位置：</b>开头总起句、结尾总结句、反复出现的句子、带感叹号的句子。</div>
+      </div>
+
+      <div class="qa-block">
+        <h3>高频题型 1：结合语句体会思想感情</h3>
+        <p class="ask-line"><span class="tag">设问</span>读画线句，说说你体会到作者怎样的思想感情。</p>
+        <p class="template-line"><span class="tag green">模板</span>我从“______”这句话中，体会到作者对______的______之情。句中“______”写出了______的画面，让人感受到______。</p>
+        <p class="example-line"><span class="tag orange">同步例句</span>“乡下人家，不论什么时候，不论什么季节，都有一道独特、迷人的风景。”</p>
+        <p class="answer-line"><strong>示范答案：</strong>我从这句话中体会到作者对乡下人家的喜爱和赞美之情。“独特、迷人”写出了乡村风光与众不同、自然美好的特点，让人感受到作者对田园生活的向往。</p>
+      </div>
+
+      <div class="qa-block">
+        <h3>高频题型 2：关键词赏析</h3>
+        <p class="ask-line"><span class="tag">设问</span>句中“探”“飞”“流”等词语用得好在哪里？</p>
+        <p class="template-line"><span class="tag green">模板</span>“______”本来指______，这里写出了______的样子，使画面更加______，表达了作者______的感情。</p>
+        <p class="example-line"><span class="tag orange">同步例句</span>“几场春雨过后，许多鲜嫩的笋，成群地从土里探出头来。”</p>
+        <p class="answer-line"><strong>示范答案：</strong>“探”本来是人的动作，这里写出了竹笋刚从土里钻出来、充满好奇的样子，使画面更加生动活泼，表达了作者对春天乡村景物的喜爱。</p>
       </div>
     </div>
+  </section>
 
-    <!-- 导航菜单 -->
-    <div class="nav-menu">
-      <div class="nav-title">📋 快速导航</div>
-      <div class="nav-links">
-        <a href="#unit1" class="nav-link">第一单元</a>
-        <a href="#unit2" class="nav-link">第二单元 ⭐</a>
-        <a href="#unit3" class="nav-link">第三单元</a>
-        <a href="#unit4" class="nav-link">第四单元 ⭐</a>
-        <a href="#unit5" class="nav-link">第五单元</a>
-        <a href="#unit6" class="nav-link">第六单元 ⭐</a>
-        <a href="#unit7" class="nav-link">第七单元 ⭐</a>
-        <a href="#unit8" class="nav-link">第八单元</a>
+  <section class="unit-card" id="unit2">
+    <div class="unit-head">
+      <h2>第二单元：阅读时能提出不懂的问题，并试着解决 ⭐</h2>
+      <p class="unit-meta">重点课文：《琥珀》《飞向蓝天的恐龙》《纳米技术就在我们身边》｜核心能力：多角度提问、解决问题、判断说明方法、体会说明文语言。</p>
+    </div>
+    <div class="unit-body">
+      <div class="focus-row">
+        <div class="mini-card"><b>提问角度：</b>内容不懂、写法不懂、启示联想。</div>
+        <div class="mini-card"><b>解决方法：</b>联系上下文、查资料、请教别人、结合生活经验。</div>
+        <div class="mini-card"><b>重点说明方法：</b>举例子、列数字、作比较、打比方。</div>
+      </div>
+
+      <div class="qa-block">
+        <h3>高频题型 1：多角度提问并写解决办法</h3>
+        <p class="ask-line"><span class="tag">设问</span>读完选段，请从内容或写法角度提出一个问题，并写出解决问题的方法。</p>
+        <p class="template-line"><span class="tag green">模板</span>我的问题是：______？我准备用______的方法解决，因为______。</p>
+        <p class="example-line"><span class="tag orange">同步例子</span>读《琥珀》时，可以提出：“为什么作者说这个琥珀的形成需要很长时间？”</p>
+        <p class="answer-line"><strong>示范答案：</strong>我的问题是：为什么这个琥珀的形成需要很长时间？我准备用联系上下文和查阅资料的方法解决，因为文中写到松脂包住小虫后，还要经过地壳变化、泥沙掩埋等过程，查资料能进一步了解琥珀形成的科学知识。</p>
+      </div>
+
+      <div class="qa-block">
+        <h3>高频题型 2：判断说明方法并分析作用</h3>
+        <p class="ask-line"><span class="tag">设问</span>画线句运用了什么说明方法？有什么作用？</p>
+        <p class="template-line"><span class="tag green">模板</span>这句话运用了______的说明方法，______地说明了______的特点，使读者______。</p>
+        <p class="example-line"><span class="tag orange">同步例句</span>“纳米是非常非常小的长度单位，1 纳米等于十亿分之一米。”</p>
+        <p class="answer-line"><strong>示范答案：</strong>这句话运用了列数字的说明方法，准确具体地说明了纳米极小的特点，使读者对“纳米有多小”有更直观、科学的认识。</p>
+        <div class="word-bank">
+          <span>举例子：具体易懂</span><span>列数字：准确科学</span><span>作比较：突出特点</span><span>打比方：生动形象</span>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <h3>高频题型 3：说明文语言准确性——加点词能否删去</h3>
+        <p class="ask-line"><span class="tag">设问</span>句中“大约、可能、几乎、一般”等词语能否删去？为什么？</p>
+        <p class="template-line"><span class="tag green">五步法</span>不能删。①解释词义；②说明原句意思；③说明删后变化；④指出不符合实际；⑤总结体现说明文语言准确、严谨、科学。</p>
+        <p class="example-line"><span class="tag orange">同步例句</span>“科学家们认为，鸟类很可能是一种小型恐龙的后裔。”句中“很可能”能否删去？</p>
+        <p class="answer-line"><strong>示范答案：</strong>不能删。“很可能”表示推测，并不是完全确定。加上这个词，句义为鸟类是小型恐龙后裔的可能性很大；如果删去，就变成了完全肯定的说法，与科学研究需要严谨表达不符。这个词体现了说明文语言的准确性、严谨性和科学性。</p>
       </div>
     </div>
+  </section>
 
-    <!-- 第一单元 -->
-    <div class="unit-block" id="unit1">
-      <div class="unit-title">第一单元：抓住关键语句，初步体会课文表达的思想感情</div>
-      <div class="unit-focus">
-        <strong>核心语文要素：</strong>抓住关键语句体会思想感情<br>
-        <strong>重点课文：</strong>《乡下人家》《天窗》《三月桃花水》
+  <section class="unit-card" id="unit3">
+    <div class="unit-head">
+      <h2>第三单元：初步了解现代诗的特点，体会诗歌表达的情感</h2>
+      <p class="unit-meta">重点课文：《短诗三首》《绿》《白桦》《在天晴了的时候》｜核心能力：读出节奏、发现想象、体会诗歌情感。</p>
+    </div>
+    <div class="unit-body">
+      <div class="focus-row">
+        <div class="mini-card"><b>现代诗特点：</b>语言凝练、节奏鲜明、想象丰富、形式自由。</div>
+        <div class="mini-card"><b>常用手法：</b>比喻、拟人、排比、反复。</div>
       </div>
 
-      <div class="section-title">高频题型1：结合语句体会思想感情（简答为主）</div>
-      <div class="question-type">
-        <div class="question-title">📌 典型设问：</div>
-        <p>品读这句话，说说你体会到作者怎样的思想感情？</p>
-        <div class="question-title">🎯 常规答题方向：</div>
-        <p>对乡村风光的<span class="highlight">喜爱、赞美</span>，对田园生活的<span class="highlight">向往</span>。</p>
+      <div class="qa-block">
+        <h3>高频题型 1：概括现代诗特点</h3>
+        <p class="ask-line"><span class="tag">设问</span>这首诗在语言或形式上有什么特点？</p>
+        <p class="template-line"><span class="tag green">模板</span>这首诗语言______，句式______，读起来______；诗中还运用了______，写出了______，表达了______。</p>
+        <p class="example-line"><span class="tag orange">同步例句</span>“到哪儿去找这么多的绿：墨绿、浅绿、嫩绿、翠绿、淡绿、粉绿……”</p>
+        <p class="answer-line"><strong>示范答案：</strong>这几行诗列举了多种绿色，语言简洁而富有变化，读起来有节奏感；诗人用丰富的想象写出了春天绿色之多、生命力之强，表达了对春天的喜爱和赞美。</p>
       </div>
 
-      <div class="section-title">高频题型2：关键词赏析（填空/简答）</div>
-      <div class="question-type">
-        <div class="question-title">📌 典型设问：</div>
-        <p>句中某个词语运用得好在哪里？结合语境说说理解。</p>
-        <div class="question-title">🎯 考查特点：</div>
-        <p>侧重品析词语营造的<span class="highlight">画面感</span>与<span class="highlight">情感色彩</span>。</p>
-      </div>
-
-      <div class="template-box">
-        <div class="template-title">📝 通用答题模板</div>
-        我从"______"这个词语（句子）中，体会到作者对乡村生活的______之情，这个词语生动地写出了______的画面，让我感受到______。
+      <div class="qa-block">
+        <h3>高频题型 2：体会诗歌情感</h3>
+        <p class="ask-line"><span class="tag">设问</span>读这几句诗，你体会到了诗人怎样的情感？</p>
+        <p class="template-line"><span class="tag green">模板</span>诗人通过描写______，让我们感受到______，表达了诗人对______的______之情。</p>
+        <p class="example-line"><span class="tag orange">同步例句</span>“白桦四周徜徉着姗姗来迟的朝霞，它向白雪皑皑的树枝又抹一层银色的光华。”</p>
+        <p class="answer-line"><strong>示范答案：</strong>诗人通过描写朝霞照耀白桦的美丽画面，让我们感受到白桦的洁白、高雅和宁静，表达了诗人对白桦以及自然美景的喜爱和赞美之情。</p>
       </div>
     </div>
+  </section>
 
-    <!-- 第二单元 -->
-    <div class="unit-block" id="unit2">
-      <div class="unit-title">第二单元：阅读时能提出不懂的问题，并试着解决 ⭐ 本册重中之重</div>
-      <div class="unit-focus">
-        <strong>核心语文要素：</strong>提出问题 + 解决问题 + 说明方法<br>
-        <strong>重点课文：</strong>《琥珀》《飞向蓝天的恐龙》《纳米技术就在我们身边》
+  <section class="unit-card" id="unit4">
+    <div class="unit-head">
+      <h2>第四单元：体会作家是如何表达对动物的感情的 ⭐</h2>
+      <p class="unit-meta">重点课文：《猫》《母鸡》《白鹅》｜核心能力：识别明贬实褒，体会作者对动物的喜爱。</p>
+    </div>
+    <div class="unit-body">
+      <div class="focus-row">
+        <div class="mini-card"><b>核心写法：</b>明贬实褒——表面像批评，实际是喜爱。</div>
+        <div class="mini-card"><b>常见词：</b>古怪、淘气、傲慢、架子十足、欺侮、负责。</div>
       </div>
 
-      <div class="section-title">一、基础题型：多角度提问+解答</div>
-      <div class="question-type">
-        <div class="question-title">📌 题目要求：</div>
-        <p>要求学生边读边提问，批注在文章一旁，写出解决问题的方法。</p>
-        <div class="question-title">🎯 答题技巧：</div>
-        <p>可从<span class="highlight">内容、写法、启示</span>三个角度，结合文本提出问题 + 写出解决方法（<span class="highlight">联系上下文、查阅资料、请教他人</span>等）。</p>
+      <div class="qa-block">
+        <h3>高频题型 1：理解明贬实褒</h3>
+        <p class="ask-line"><span class="tag">设问</span>这句话是在批评动物吗？请谈谈你的理解。</p>
+        <p class="template-line"><span class="tag green">模板</span>作者并不是真的在批评______。这句话运用了明贬实褒的写法，表面写______，实际上写出了______，表达了作者对______的______之情。</p>
+        <p class="example-line"><span class="tag orange">同步例句</span>“猫的性格实在有些古怪。”</p>
+        <p class="answer-line"><strong>示范答案：</strong>作者并不是真的在批评猫。这句话运用了明贬实褒的写法，表面写猫性格古怪，实际上写出了猫性格独特、调皮可爱的特点，表达了作者对猫的喜爱之情。</p>
       </div>
 
-      <div class="section-title">二、重点板块：说明方法（本册重中之重）</div>
-      <div class="question-type">
-        <div class="question-title">📌 本册高频考查4种基础说明方法：</div>
-        
-        <div style="margin-top: 15px;">
-          <strong>1. 举例子</strong><br>
-          <div style="margin: 8px 0;">
-            <strong>判定关键词：</strong>
-            <span class="keyword-tag">比如</span>
-            <span class="keyword-tag">例如</span>
-            <span class="keyword-tag">譬如</span>
-            <span class="keyword-tag">举例来说</span>
-            <span class="keyword-tag">像</span>
-          </div>
-          <p><strong>作用：</strong>用具体事例，将抽象内容讲得通俗易懂，增强说服力。</p>
-          <div class="template-box">
-            <div class="template-title">答题句式：</div>
-            运用<span class="highlight">举例子</span>的说明方法，具体形象地说明了事物______的特点。
-          </div>
-        </div>
-
-        <div style="margin-top: 15px;">
-          <strong>2. 列数字</strong><br>
-          <div style="margin: 8px 0;">
-            <strong>判定关键词：</strong>
-            <span class="keyword-tag">整数</span>
-            <span class="keyword-tag">小数</span>
-            <span class="keyword-tag">倍数</span>
-            <span class="keyword-tag">时长</span>
-            <span class="keyword-tag">重量</span>
-            <span class="keyword-tag">面积</span>
-          </div>
-          <p><strong>作用：</strong>用数据体现科学性，直观展现事物特征，内容准确可信。</p>
-          <div class="template-box">
-            <div class="template-title">答题句式：</div>
-            运用<span class="highlight">列数字</span>的说明方法，准确具体地说明了事物______的特点。
-          </div>
-        </div>
-
-        <div style="margin-top: 15px;">
-          <strong>3. 作比较</strong><br>
-          <div style="margin: 8px 0;">
-            <strong>判定关键词：</strong>
-            <span class="keyword-tag">比</span>
-            <span class="keyword-tag">相比</span>
-            <span class="keyword-tag">和……不一样</span>
-            <span class="keyword-tag">不同于</span>
-            <span class="keyword-tag">相当于</span>
-          </div>
-          <p><strong>作用：</strong>将两种事物对照，突出被说明对象的独有特征。</p>
-          <div class="template-box">
-            <div class="template-title">答题句式：</div>
-            运用<span class="highlight">作比较</span>的说明方法，突出强调了事物______的特点。
-          </div>
-        </div>
-
-        <div style="margin-top: 15px;">
-          <strong>4. 打比方</strong><br>
-          <div style="margin: 8px 0;">
-            <strong>判定关键词：</strong>
-            <span class="keyword-tag">像</span>
-            <span class="keyword-tag">好像</span>
-            <span class="keyword-tag">仿佛</span>
-            <span class="keyword-tag">好似</span>
-            <span class="keyword-tag">宛如</span>
-          </div>
-          <p><strong>作用：</strong>用熟知事物类比，表达生动形象，富有画面感。</p>
-          <div class="template-box">
-            <div class="template-title">答题句式：</div>
-            运用<span class="highlight">打比方</span>的说明方法，生动形象地说明了事物______的特点。
-          </div>
-        </div>
-      </div>
-
-      <div class="section-title">三、高频拓展题型：说明文语言赏析（加点词能否删去）</div>
-      <div class="question-type">
-        <div class="question-title">📌 题干形式：</div>
-        <p>画线句子中"××"一词能否删掉？为什么？</p>
-        <p style="color: #991B1B; font-weight: 500;">⭐ 考查核心：说明文语言准确、严谨、科学的特点，是单元检测、区统考<span class="highlight">高频大题</span>！</p>
-        
-        <div style="margin-top: 12px;">
-          <strong>常考限定类词语：</strong><br>
-          <div style="margin: 8px 0;">
-            <span class="keyword-tag">大约</span>
-            <span class="keyword-tag">大概</span>
-            <span class="keyword-tag">左右</span>
-            <span class="keyword-tag">差不多</span>
-            <span class="keyword-tag">或许</span>
-            <span class="keyword-tag">可能</span>
-            <span style="color: #6B7280;">（表估计、推测）</span>
-          </div>
-          <div style="margin: 8px 0;">
-            <span class="keyword-tag">几乎</span>
-            <span class="keyword-tag">大多</span>
-            <span class="keyword-tag">大部分</span>
-            <span class="keyword-tag">仅</span>
-            <span class="keyword-tag">只</span>
-            <span class="keyword-tag">一般</span>
-            <span style="color: #6B7280;">（表范围）</span>
-          </div>
-          <div style="margin: 8px 0;">
-            <span class="keyword-tag">极</span>
-            <span class="keyword-tag">很</span>
-            <span class="keyword-tag">稍微</span>
-            <span class="keyword-tag">至少</span>
-            <span style="color: #6B7280;">（表程度）</span>
-          </div>
-          <div style="margin: 8px 0;">
-            <span class="keyword-tag">往往</span>
-            <span class="keyword-tag">常常</span>
-            <span style="color: #6B7280;">（表频率）</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="five-steps">
-        <div style="font-weight: 600; color: #065F46; margin-bottom: 10px;">🎯 标准答题思路（五步答题法）</div>
-        <div class="step-item" data-step="①">表态：不能删掉。</div>
-        <div class="step-item" data-step="②">释义：解释加点词本身的含义。</div>
-        <div class="step-item" data-step="③">析原意：结合语句，说明保留该词时，句子表达的意思。</div>
-        <div class="step-item" data-step="④">辨变化：说明删去该词后，句意发生的改变，指出与客观实际不相符。</div>
-        <div class="step-item" data-step="⑤">总结：该词语体现了说明文语言的准确性、严谨性和科学性。</div>
-      </div>
-
-      <div class="template-box">
-        <div class="template-title">📝 通用答题模板（直接套用即可）</div>
-        不能删掉。"<strong>______</strong>"的意思是<strong>________</strong>。加上这个词，句义为<strong>________</strong>。如果删掉，句子意思就变成了<strong>________</strong>，与作者原意不符。这个词语体现了说明文语言的<strong>准确性、严谨性和科学性</strong>。
-      </div>
-
-      <div class="example-box">
-        <div class="example-title">💡 典型例题+完整作答示范</div>
-        <p><strong>例题：</strong>这座塔大约有五十米高。句中"大约"能否删掉？为什么？</p>
-        <p><strong>参考答案：</strong></p>
-        <p>不能删掉。"大约"表示估计、不确定。加上这个词，句义为这座塔的高度接近五十米，并非精准的五十米。如果删掉，句子就变成这座塔一定是五十米，与作者原意不符。这个词语体现了说明文语言的准确性、严谨性和科学性。</p>
+      <div class="qa-block">
+        <h3>高频题型 2：分析动物特点和作者情感</h3>
+        <p class="ask-line"><span class="tag">设问</span>从这段描写中，你看出动物有什么特点？作者表达了什么感情？</p>
+        <p class="template-line"><span class="tag green">模板</span>从“______”可以看出______具有______的特点。作者把它写得______，字里行间流露出______。</p>
+        <p class="example-line"><span class="tag orange">同步例句</span>“鹅的步调从容，大模大样的，颇像京剧里的净角出场。”</p>
+        <p class="answer-line"><strong>示范答案：</strong>从“步调从容”“大模大样”“像京剧里的净角出场”可以看出白鹅高傲、有派头的特点。作者把白鹅写得像一个有身份的人物，语言幽默风趣，字里行间流露出对白鹅的喜爱。</p>
       </div>
     </div>
+  </section>
 
-    <!-- 第三单元 -->
-    <div class="unit-block" id="unit3">
-      <div class="unit-title">第三单元：初步了解现代诗的特点，体会诗歌表达的情感</div>
-      <div class="unit-focus">
-        <strong>核心语文要素：</strong>现代诗特点 + 体会诗歌情感<br>
-        <strong>重点课文：</strong>《短诗三首》《绿》《白桦》《在天晴了的时候》
+  <section class="unit-card" id="unit5">
+    <div class="unit-head">
+      <h2>第五单元：了解课文按游览顺序写景的方法</h2>
+      <p class="unit-meta">重点课文：《海上日出》《记金华的双龙洞》｜核心能力：梳理写景顺序、体会景物特点、理解过渡句作用。</p>
+    </div>
+    <div class="unit-body">
+      <div class="focus-row">
+        <div class="mini-card"><b>常见顺序：</b>游览顺序、时间顺序、空间顺序、景物类别顺序。</div>
+        <div class="mini-card"><b>游览顺序标志：</b>来到、经过、到了、进入、出了、沿着。</div>
       </div>
 
-      <div class="section-title">现代诗的特点</div>
-      <div class="question-type">
-        <div class="step-item" data-step="1"><strong>饱含真挚的情感</strong>，语言表达独特</div>
-        <div class="step-item" data-step="2"><strong>读起来朗朗上口</strong>，富有节奏感和韵律美</div>
-        <div class="step-item" data-step="3"><strong>充满丰富的想象</strong>，常常运用拟人和比喻等修辞手法</div>
-        <div class="step-item" data-step="4">形式<span class="highlight">自由</span>，句子<span class="highlight">长短错落</span></div>
+      <div class="qa-block">
+        <h3>高频题型 1：判断写景顺序</h3>
+        <p class="ask-line"><span class="tag">设问</span>作者是按照什么顺序描写景物的？请结合文章内容说一说。</p>
+        <p class="template-line"><span class="tag green">模板</span>本文是按照______顺序描写的。作者先写______，接着写______，然后写______，最后写______。这样写条理清楚，让读者仿佛______。</p>
+        <p class="example-line"><span class="tag orange">同步例子</span>《记金华的双龙洞》路线：路上 → 洞口 → 外洞 → 孔隙 → 内洞 → 出洞。</p>
+        <p class="answer-line"><strong>示范答案：</strong>本文是按照游览顺序描写的。作者先写路上的景色，接着写洞口和外洞，然后写通过孔隙进入内洞，最后写出洞。这样写条理清楚，让读者仿佛跟着作者一起游览双龙洞。</p>
       </div>
 
-      <div class="template-box">
-        <div class="template-title">📝 体会诗歌情感答题模板</div>
-        这首诗运用了______的修辞手法，写出了______的特点，表达了诗人______的思想感情，让我感受到了______。
+      <div class="qa-block">
+        <h3>高频题型 2：分析过渡句/过渡段作用</h3>
+        <p class="ask-line"><span class="tag">设问</span>这句话在文中起什么作用？</p>
+        <p class="template-line"><span class="tag green">模板</span>这句话起承上启下的过渡作用，承接上文______，引出下文______，使文章衔接自然。</p>
+        <p class="example-line"><span class="tag orange">同步例句</span>“内洞一团漆黑，什么都看不见。”</p>
+        <p class="answer-line"><strong>示范答案：</strong>这句话承接上文作者通过孔隙来到内洞的内容，引出下文对内洞景物的描写，起到了过渡作用，也突出了内洞幽深、神秘的特点。</p>
+      </div>
+
+      <div class="qa-block">
+        <h3>高频题型 3：体会景物变化</h3>
+        <p class="ask-line"><span class="tag">设问</span>作者是怎样写出日出过程变化的？</p>
+        <p class="template-line"><span class="tag green">模板</span>作者按照______顺序，抓住______、______、______等变化，写出了______的过程，表达了______。</p>
+        <p class="example-line"><span class="tag orange">同步例子</span>《海上日出》抓住颜色、位置、光亮的变化写日出。</p>
+        <p class="answer-line"><strong>示范答案：</strong>作者按照时间顺序，抓住太阳颜色由红到亮、位置由低到高、光亮由弱到强的变化，写出了海上日出壮观美丽的过程，表达了对自然奇观的赞美。</p>
       </div>
     </div>
+  </section>
 
-    <!-- 第四单元 -->
-    <div class="unit-block" id="unit4">
-      <div class="unit-title">第四单元：体会作家是如何表达对动物的感情的 ⭐ 本册重中之重</div>
-      <div class="unit-focus">
-        <strong>核心语文要素：</strong>明贬实褒写作手法 + 体会对动物的感情<br>
-        <strong>重点课文：</strong>《猫》《母鸡》《白鹅》
-      </div>
-
-      <div class="section-title">重点板块：明贬实褒的写作手法（本册重中之重）</div>
-      
-      <div class="five-steps">
-        <div style="font-weight: 600; color: #065F46; margin-bottom: 10px;">🎯 标准答题句式（五步走）</div>
-        <div class="step-item" data-step="1">表明观点：作者并不是真的这样认为。</div>
-        <div class="step-item" data-step="2">点明写法：这句话运用了<span class="highlight">明贬实褒</span>的写作手法。</div>
-        <div class="step-item" data-step="3">分析表层含义：表面写出了______。</div>
-        <div class="step-item" data-step="4">分析深层含义：实际上写出了______。</div>
-        <div class="step-item" data-step="5">点明情感：表达了作者______的情感。</div>
-      </div>
-
-      <div class="template-box">
-        <div class="template-title">📝 完整答题模板（直接套用）</div>
-        作者并不是真的这样认为。这句话运用了<span class="highlight">明贬实褒</span>的写作手法，字面上好像是在贬低______，说它______，实际上字里行间藏着作者对它的______之情，突出了它______的特点，言语间流露出亲昵。
-      </div>
-
-      <div class="example-box">
-        <div class="example-title">💡 例题示范（《猫》）</div>
-        <p><strong>题目：</strong>"猫的性格实在有些古怪。"这句话是在批评猫吗？谈谈你的理解。</p>
-        <p><strong>参考答案：</strong></p>
-        <p>作者并不是真的在批评猫。这句话运用了<span class="highlight">明贬实褒</span>的写作手法，字面上好像是在贬低猫，说它性格古怪，实际上字里行间藏着作者对它的<span class="highlight">喜爱</span>之情，突出了猫<span class="highlight">性格独特、调皮可爱</span>的特点，言语间流露出亲昵。</p>
-      </div>
-
-      <div class="section-title">明贬实褒常见贬义词（老舍文风）</div>
-      <div style="margin: 10px 0;">
-        <span class="keyword-tag">古怪</span>
-        <span class="keyword-tag">架子十足</span>
-        <span class="keyword-tag">傲慢</span>
-        <span class="keyword-tag">欺软怕硬</span>
-        <span class="keyword-tag">嚣张</span>
-        <span class="keyword-tag">霸道</span>
-        <span class="keyword-tag">任性</span>
-        <span class="keyword-tag">淘气</span>
-      </div>
-      <p style="color: #6B7280;">⚠️ 注意：看到这些词时，先想想是不是明贬实褒！</p>
+  <section class="unit-card" id="unit6">
+    <div class="unit-head">
+      <h2>第六单元：学习把握长文章的主要内容 ⭐</h2>
+      <p class="unit-meta">重点课文：《小英雄雨来》《我们家的男子汉》《芦花鞋》｜核心能力：拆分结构、拟小标题、概括主要内容、分析环境描写。</p>
     </div>
-
-    <!-- 第五单元 -->
-    <div class="unit-block" id="unit5">
-      <div class="unit-title">第五单元：了解课文按游览顺序写景的方法</div>
-      <div class="unit-focus">
-        <strong>核心语文要素：</strong>游览顺序 + 景物特点<br>
-        <strong>重点课文：</strong>《海上日出》《记金华的双龙洞》
+    <div class="unit-body">
+      <div class="focus-row">
+        <div class="mini-card"><b>概括公式：</b>谁 + 在哪里/什么时候 + 因为什么 + 做了什么 + 结果怎样。</div>
+        <div class="mini-card"><b>环境作用：</b>交代背景、渲染气氛、推动情节、衬托人物。</div>
       </div>
 
-      <div class="section-title">高频题型：按照什么顺序描写景物</div>
-      <div class="question-type">
-        <div class="question-title">📌 常见的写景顺序：</div>
-        <div class="step-item" data-step="1"><strong>游览顺序（移步换景）</strong>：按照游览的先后顺序描写（最常考）</div>
-        <div class="step-item" data-step="2"><strong>时间顺序</strong>：按时间变化描写（早晨→中午→傍晚、春夏秋冬）</div>
-        <div class="step-item" data-step="3"><strong>空间顺序</strong>：从上到下、从远到近、从外到内</div>
-        <div class="step-item" data-step="4"><strong>景物类别顺序</strong>：先写山再写水等</div>
+      <div class="qa-block">
+        <h3>高频题型 1：概括长文章主要内容</h3>
+        <p class="ask-line"><span class="tag">设问</span>请概括这篇文章的主要内容。</p>
+        <p class="template-line"><span class="tag green">四步法</span>①拆分结构；②提炼段意；③拟小标题；④串联全文。</p>
+        <p class="template-line"><span class="tag green">模板</span>这篇文章主要讲了______在______，因为______，做了______，最后______的故事。</p>
+        <p class="example-line"><span class="tag orange">同步例子</span>《小英雄雨来》可抓住“掩护李大叔—被鬼子抓住—机智斗争—跳河脱险”来概括。</p>
+        <p class="answer-line"><strong>示范答案：</strong>这篇文章主要讲了雨来为了掩护交通员李大叔，被鬼子抓住后机智勇敢地同敌人斗争，最后跳进河里成功脱险的故事，表现了雨来热爱祖国、机智勇敢的品质。</p>
       </div>
 
-      <div class="template-box">
-        <div class="template-title">📝 答题模板</div>
-        本文是按照<span class="highlight">游览顺序</span>描写的。作者先写了______，接着写了______，然后写了______，最后写了______。这样写条理清晰，让读者仿佛身临其境。
+      <div class="qa-block">
+        <h3>高频题型 2：拟小标题</h3>
+        <p class="ask-line"><span class="tag">设问</span>请给文章各部分拟小标题。</p>
+        <p class="template-line"><span class="tag green">技巧</span>小标题要短，抓主要事件，句式尽量一致。可用“谁干什么”或“四字短语”。</p>
+        <p class="example-line"><span class="tag orange">同步例子</span>给《小英雄雨来》部分情节拟小标题。</p>
+        <p class="answer-line"><strong>示范答案：</strong>游泳本领高、上夜校读书、掩护李大叔、勇斗鬼子、河沿枪声、雨来脱险。每个小标题都抓住了该部分最主要的事件。</p>
       </div>
 
-      <div class="section-title">过渡句/过渡段的作用</div>
-      <div class="question-type">
-        <p><strong>典型设问：</strong>这句话在文中起什么作用？</p>
-        <p><strong>答案：</strong><span class="highlight">承上启下的过渡作用</span>，承接上文______的内容，引出下文要描写的______。</p>
+      <div class="qa-block">
+        <h3>高频题型 3：环境描写作用</h3>
+        <p class="ask-line"><span class="tag">设问</span>文中画线的环境描写有什么作用？</p>
+        <p class="template-line"><span class="tag green">模板</span>这句话是环境描写，交代了故事发生的______，渲染了______的气氛，为下文______做铺垫，同时衬托出人物______的形象/心情。</p>
+        <p class="example-line"><span class="tag orange">同步例句</span>“晋察冀边区的北部有一条还乡河，河里长着很多芦苇。”</p>
+        <p class="answer-line"><strong>示范答案：</strong>这句话是环境描写，交代了故事发生的地点和自然环境，写出了还乡河一带芦苇多的特点，为下文雨来跳入河中、借助熟悉的水性脱险做铺垫，也衬托出雨来机智勇敢的形象。</p>
       </div>
     </div>
+  </section>
 
-    <!-- 第六单元 -->
-    <div class="unit-block" id="unit6">
-      <div class="unit-title">第六单元：学习把握长文章的主要内容 ⭐ 本册重中之重</div>
-      <div class="unit-focus">
-        <strong>核心语文要素：</strong>概括长文章主要内容 + 环境描写作用<br>
-        <strong>重点课文：</strong>《小英雄雨来》《我们家的男子汉》《芦花鞋》
+  <section class="unit-card" id="unit7">
+    <div class="unit-head">
+      <h2>第七单元：从人物的语言、动作等描写中感受人物的品质 ⭐</h2>
+      <p class="unit-meta">重点课文：《古诗三首》《“诺曼底号”遇难记》《黄继光》｜核心能力：识别人物描写方法，结合具体行为分析人物品质。</p>
+    </div>
+    <div class="unit-body">
+      <div class="focus-row">
+        <div class="mini-card"><b>描写方法：</b>语言、动作、神态、心理、外貌。</div>
+        <div class="mini-card"><b>答题关键：</b>不能只写品质词，必须结合人物具体表现。</div>
       </div>
 
-      <div class="section-title">一、把握长文章主要内容（四步概括法）</div>
-      <div class="five-steps">
-        <div class="step-item" data-step="1"><strong>拆分结构：</strong>按起因—经过—结果，把长文章分成几部分。</div>
-        <div class="step-item" data-step="2"><strong>提炼段意：</strong>锁定每部分的主语，用「谁 + 干什么 + 结果怎么样」的句式，缩成一句话段意。</div>
-        <div class="step-item" data-step="3"><strong>拟写小标题：</strong>把段意压缩成无细节、只抓主干、句式/字数与示例尽量一致的小标题。</div>
-        <div class="step-item" data-step="4"><strong>串联全文：</strong>按顺序把小标题串起来，就是全文主要内容。</div>
+      <div class="qa-block">
+        <h3>高频题型 1：结合行为谈人物品质</h3>
+        <p class="ask-line"><span class="tag">设问</span>你从人物的做法中感受到他怎样的品质？请结合内容说一说。</p>
+        <p class="template-line"><span class="tag green">模板</span>他/她______（具体行为），体现出他/她______的品质；他/她______，又体现出______。</p>
+        <p class="example-line"><span class="tag orange">同步例子</span>《“诺曼底号”遇难记》中，哈尔威船长在混乱中指挥救援，最后与船一起沉入大海。</p>
+        <p class="answer-line"><strong>示范答案：</strong>哈尔威船长在灾难发生时沉着指挥乘客和船员撤离，体现出他临危不乱、忠于职守的品质；他把生的希望留给别人，自己与船共存亡，又体现出他舍己救人、尽职尽责的崇高品质。</p>
       </div>
 
-      <div class="template-box">
-        <div class="template-title">📝 概括主要内容答题模板</div>
-        这篇课文主要讲了<strong>______（谁）</strong>在<strong>______（时间/地点）</strong>，因为<strong>______（起因）</strong>，做了<strong>______（经过）</strong>，最后<strong>______（结果）</strong>的故事。
-      </div>
-
-      <div class="section-title">二、分析环境描写的作用（重中之重）</div>
-      <div class="question-type">
-        <div class="question-title">📌 题型特征：</div>
-        <p>题干常问：文中画线的环境描写句子有什么作用？考查学生对环境描写四大作用的理解与结合文本分析的能力。</p>
-        
-        <div style="margin-top: 15px;">
-          <strong>环境描写的四大作用：</strong>
-          <div class="step-item" data-step="1"><strong>交代背景：</strong>点明故事发生的时间、地点、社会或自然环境。</div>
-          <div class="step-item" data-step="2"><strong>渲染气氛：</strong>烘托出______（如宁静/紧张/悲壮/欢快）的氛围，奠定文章基调。</div>
-          <div class="step-item" data-step="3"><strong>推动情节/做铺垫：</strong>为下文______（人物出场、事件发生、矛盾冲突）的情节埋下伏笔、做铺垫。</div>
-          <div class="step-item" data-step="4"><strong>衬托人物：</strong>衬托主人公______（勇敢/坚毅/机智/热爱家乡）的英雄形象，或烘托人物______（平静/紧张/悲伤）的心情。</div>
+      <div class="qa-block">
+        <h3>高频题型 2：判断人物描写方法及作用</h3>
+        <p class="ask-line"><span class="tag">设问</span>画线句运用了什么描写方法？有什么作用？</p>
+        <p class="template-line"><span class="tag green">模板</span>这句话运用了______描写，生动形象地写出了人物______的特点/心情，表现了人物______的品质。</p>
+        <p class="example-line"><span class="tag orange">同步例句</span>“黄继光愤怒地注视着敌人的火力点，他转过身来坚定地对指导员说：‘指导员，请把这个任务交给我吧！’”</p>
+        <p class="answer-line"><strong>示范答案：</strong>这句话运用了神态描写和语言描写。“愤怒地注视”“坚定地说”写出了黄继光面对敌人时的仇恨和完成任务的决心，表现了他英勇无畏、主动担当的品质。</p>
+        <div class="word-bank">
+          <span>英雄人物：英勇无畏</span><span>岗位人物：尽职尽责</span><span>普通人物：善良淳朴</span><span>危急时刻：沉着冷静</span>
         </div>
       </div>
 
-      <div class="template-box">
-        <div class="template-title">📝 环境描写通用答题句式</div>
-        这句话是<span class="highlight">环境描写</span>，交代了故事发生的______（地点/背景），渲染了______的气氛，为下文______的情节做铺垫，同时衬托出主人公______的形象/心情。
+      <div class="qa-block">
+        <h3>高频题型 3：古诗中的人物品质</h3>
+        <p class="ask-line"><span class="tag">设问</span>诗句表现了诗人或人物怎样的精神品质？</p>
+        <p class="template-line"><span class="tag green">模板</span>诗句“______”写出了______，表现了诗人/人物______的精神品质。</p>
+        <p class="example-line"><span class="tag orange">同步例句</span>“洛阳亲友如相问，一片冰心在玉壶。”</p>
+        <p class="answer-line"><strong>示范答案：</strong>这两句诗写出诗人请友人转告洛阳亲友，自己的心依然像玉壶中的冰一样纯洁，表现了诗人洁身自好、坚守高洁品格的精神。</p>
       </div>
     </div>
+  </section>
 
-    <!-- 第七单元 -->
-    <div class="unit-block" id="unit7">
-      <div class="unit-title">第七单元：从人物的语言、动作等描写中感受人物的品质 ⭐ 本册重中之重</div>
-      <div class="unit-focus">
-        <strong>核心语文要素：</strong>人物描写方法 + 人物品质分析<br>
-        <strong>重点课文：</strong>《古诗三首》《"诺曼底号"遇难记》《黄继光》
+  <section class="unit-card" id="unit8">
+    <div class="unit-head">
+      <h2>第八单元：感受童话的奇妙，体会人物真善美的形象</h2>
+      <p class="unit-meta">重点课文：《宝葫芦的秘密》《巨人的花园》《海的女儿》｜核心能力：发现奇妙想象，分析人物形象，理解童话道理。</p>
+    </div>
+    <div class="unit-body">
+      <div class="focus-row">
+        <div class="mini-card"><b>童话特点：</b>想象奇妙、情节离奇、人物鲜明、蕴含道理。</div>
+        <div class="mini-card"><b>常用手法：</b>拟人、夸张、对比、反复。</div>
       </div>
 
-      <div class="section-title">一、结合行为谈人物品质（重中之重）</div>
-      <div class="question-type">
-        <div class="question-title">📌 典型设问：</div>
-        <p>文中人物是怎么做的？你从中感受到他怎样的品质？联系文章内容说一说。</p>
-        
-        <div class="template-box" style="margin-top: 12px;">
-          <div class="template-title">📝 答题句式</div>
-          他<strong>（具体行为）</strong>，体现出他<strong>（品质词）</strong>；他<strong>（具体行为）</strong>，体现出他<strong>（品质词）</strong>。
-        </div>
-
-        <div class="example-box" style="margin-top: 12px;">
-          <div class="example-title">💡 示例（哈尔威船长）</div>
-          他<strong>临危不乱、全程指挥众人撤离</strong>，体现出他<strong>忠于职守</strong>；他<strong>放弃逃生机会，与船共存亡</strong>，体现出他<strong>舍己救人</strong>。
-        </div>
+      <div class="qa-block">
+        <h3>高频题型 1：分析童话的奇妙想象</h3>
+        <p class="ask-line"><span class="tag">设问</span>你觉得故事中哪些地方很奇妙？请举例说明。</p>
+        <p class="template-line"><span class="tag green">模板</span>我觉得“______”这个情节很奇妙。现实中______，但童话里______，这样的想象让故事______。</p>
+        <p class="example-line"><span class="tag orange">同步例子</span>《宝葫芦的秘密》中，宝葫芦能自动满足王葆的愿望。</p>
+        <p class="answer-line"><strong>示范答案：</strong>我觉得宝葫芦能自动变出王葆想要的东西这个情节很奇妙。现实中物品不可能凭空出现，但童话里宝葫芦拥有神奇力量，这样的想象让故事充满趣味，也引发我们思考“不劳而获”是否真的好。</p>
       </div>
 
-      <div class="section-title">二、人物品质词分类（考试直接用）</div>
-      <div class="quality-list">
-        <div class="quality-category">
-          <h4>1. 革命战士/英雄人物</h4>
-          <div class="quality-item">宁死不屈</div>
-          <div class="quality-item">不怕牺牲</div>
-          <div class="quality-item">临危不惧</div>
-          <div class="quality-item">英勇无畏</div>
-          <div class="quality-item">视死如归</div>
-          <div class="quality-item">顽强不屈</div>
-          <div class="quality-item">舍生取义</div>
-        </div>
-        <div class="quality-category">
-          <h4>2. 公职/岗位履职人物</h4>
-          <div class="quality-item">尽职尽责</div>
-          <div class="quality-item">秉公办事</div>
-          <div class="quality-item">大公无私</div>
-          <div class="quality-item">坚守原则</div>
-          <div class="quality-item">爱岗敬业
-        </div>
-        <div class="quality-category">
-          <h4>3. 善良热心类人物</h4>
-          <div class="quality-item">乐于助人</div>
-          <div class="quality-item">舍己为人</div>
-          <div class="quality-item">心地善良</div>
-          <div class="quality-item">无私奉献</div>
-          <div class="quality-item">淳朴厚道</div>
-        </div>
-        <div class="quality-category">
-          <h4>4. 聪慧沉稳类人物</h4>
-          <div class="quality-item">沉着冷静</div>
-          <div class="quality-item">机智果敢</div>
-          <div class="quality-item">从容淡定</div>
-          <div class="quality-item">处事稳重</div>
-        </div>
-        <div class="quality-category">
-          <h4>5. 长辈（父母、老师）</h4>
-          <div class="quality-item">关爱他人/子女</div>
-          <div class="quality-item">以身作则</div>
-          <div class="quality-item">耐心细致</div>
-          <div class="quality-item">教导有方</div>
-        </div>
+      <div class="qa-block">
+        <h3>高频题型 2：分析人物形象</h3>
+        <p class="ask-line"><span class="tag">设问</span>你觉得文中的人物是一个怎样的人？请结合内容说明。</p>
+        <p class="template-line"><span class="tag green">模板</span>我觉得文中的______是一个______的人。我是从“______”看出来的，他/她______，所以我感受到______。</p>
+        <p class="example-line"><span class="tag orange">同步例子</span>《巨人的花园》中，巨人从自私地赶走孩子，到后来欢迎孩子们来花园玩。</p>
+        <p class="answer-line"><strong>示范答案：</strong>我觉得巨人一开始是自私冷漠的，后来变得善良、懂得分享。我是从他先赶走孩子、后来拆除围墙并欢迎孩子们回来玩看出来的。他的变化告诉我们，快乐应该和大家一起分享。</p>
       </div>
 
-      <div class="section-title">三、人物描写方法及其作用</div>
-      <div class="question-type">
-        <div style="margin-bottom: 10px;">
-          <span class="keyword-tag">外貌描写</span>
-          <span class="keyword-tag">语言描写</span>
-          <span class="keyword-tag">动作描写</span>
-          <span class="keyword-tag">神态描写</span>
-          <span class="keyword-tag">心理描写</span>
-        </div>
-        
-        <div class="template-box">
-          <div class="template-title">📝 人物描写作用答题模板</div>
-          这句话运用了<span class="highlight">______描写</span>，生动形象地写出了人物______的特点，表现了人物______的品质/心情，为下文______的情节做铺垫。
-        </div>
+      <div class="qa-block">
+        <h3>高频题型 3：概括童话告诉我们的道理</h3>
+        <p class="ask-line"><span class="tag">设问</span>这个故事给你什么启示？</p>
+        <p class="template-line"><span class="tag green">模板</span>这个故事通过______，告诉我们______。联系生活，我明白了______。</p>
+        <p class="example-line"><span class="tag orange">同步例子</span>《海的女儿》中，小人鱼为了追求美好和成全他人，承受了巨大痛苦。</p>
+        <p class="answer-line"><strong>示范答案：</strong>这个故事通过小人鱼追求美好、成全他人的经历，告诉我们善良、勇敢和无私十分珍贵。联系生活，我明白了真正的美不仅在外表，更在一颗真诚善良的心。</p>
       </div>
     </div>
+  </section>
 
-    <!-- 第八单元 -->
-    <div class="unit-block" id="unit8">
-      <div class="unit-title">第八单元：感受童话的奇妙，体会人物真善美的形象</div>
-      <div class="unit-focus">
-        <strong>核心语文要素：</strong>童话特点 + 人物形象分析<br>
-        <strong>重点课文：</strong>《宝葫芦的秘密》《巨人的花园》《海的女儿》
-      </div>
-
-      <div class="section-title">童话的特点</div>
-      <div class="question-type">
-        <div class="step-item" data-step="1"><strong>充满奇妙的想象</strong>：人物往往拥有非凡的能力，事情的发展离奇曲折</div>
-        <div class="step-item" data-step="2"><strong>蕴含一定的道理</strong>：告诉我们做人做事的道理，给人启发</div>
-        <div class="step-item" data-step="3"><strong>人物形象鲜明</strong>：真善美与假恶丑形成鲜明对比</div>
-        <div class="step-item" data-step="4"><strong>常用拟人、夸张等修辞手法</strong></div>
-      </div>
-
-      <div class="section-title">人物形象分析题型</div>
-      <div class="template-box">
-        <div class="template-title">📝 答题模板</div>
-        我觉得文中的______是一个______的人。我是从文中"______"这句话看出来的，他/她______的行为让我深受感动。这个故事告诉我们______的道理。
-      </div>
+  <section class="unit-card">
+    <div class="unit-head">
+      <h2>📌 阅读理解答题总原则</h2>
+      <p class="unit-meta">所有单元通用，考试前建议再读一遍。</p>
     </div>
-
-    <div style="background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-top: 30px;">
-      <h2 style="margin-bottom: 15px;">📚 阅读理解答题总原则</h2>
-      <div style="line-height: 2; font-size: 16px; opacity: 0.95;">
-        <p><strong>❶ 答案在文中找：</strong>80%的题目答案都能在原文中找到依据</p>
-        <p><strong>❷ 看分给点答题：</strong>几分的题就答几个要点，4分题至少答2点</p>
-        <p><strong>❸ 先用原文话答：</strong>能借用原文的就用原文，再补充自己的话</p>
-        <p><strong>❹ 答题要完整：</strong>不说半截话，把话说清楚、说完整</p>
-        <p><strong>❺ 字迹要工整：</strong>印象分很重要，卷面整洁不吃亏</p>
-      </div>
+    <div class="unit-body">
+      <ol class="step-list">
+        <li><strong>答案在文中找：</strong>先定位原文，再组织语言。</li>
+        <li><strong>看分给点答：</strong>2 分题至少 1—2 点，4 分题通常至少 2 点。</li>
+        <li><strong>先原文后概括：</strong>能借用原文词句的，不要凭空发挥。</li>
+        <li><strong>模板要灵活：</strong>模板是骨架，必须结合具体句子和人物事件。</li>
+        <li><strong>表达要完整：</strong>不要只写“喜爱”“勇敢”，要写“从哪里看出为什么”。</li>
+      </ol>
     </div>
-  </div>
+  </section>
 
-  <div class="footer">
-    <p>© 小学语文阅读理解专项练习题库 | 持续更新中</p>
-  </div>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (event) {
+        event.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
 </body>
 </html>
